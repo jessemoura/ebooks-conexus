@@ -13,7 +13,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
       category: 'financas',
       categoryLabel: 'Finanças',
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_FINANCAS_COLECAO_COMPLETA_10_VOLUMES_HOTMART_600x600.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_FINANCAS_COLECAO_COMPLETA_10_VOLUMES_HOTMART_600x600.png',
       includedEbookIds: [
         'financas-do-zero',
         'orcamento-e-organizacao',
@@ -41,7 +41,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
       category: 'idiomas',
       categoryLabel: 'Idiomas',
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_PARLANDO_ITALIANO_COLECAO_COMPLETA_6_VOLUMES_CAPA.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_PARLANDO_ITALIANO_COLECAO_COMPLETA_6_VOLUMES_CAPA.png',
       includedEbookIds: [
         'parlando-italiano-primi-passi',
         'parlando-italiano-conversazione',
@@ -92,7 +92,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
       category: 'financas',
       categoryLabel: 'Finance',
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_FINANCAS_COLECAO_COMPLETA_10_VOLUMES_HOTMART_600x600.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_FINANCAS_COLECAO_COMPLETA_10_VOLUMES_HOTMART_600x600.png',
       includedEbookIds: [
         'financas-do-zero',
         'orcamento-e-organizacao',
@@ -120,7 +120,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
       category: 'idiomas',
       categoryLabel: 'Languages',
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_PARLANDO_ITALIANO_COLECAO_COMPLETA_6_VOLUMES_CAPA.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_PARLANDO_ITALIANO_COLECAO_COMPLETA_6_VOLUMES_CAPA.png',
       includedEbookIds: [
         'parlando-italiano-primi-passi',
         'parlando-italiano-conversazione',
@@ -171,7 +171,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
       category: 'financas',
       categoryLabel: 'Finanzas',
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_FINANCAS_COLECAO_COMPLETA_10_VOLUMES_HOTMART_600x600.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_FINANCAS_COLECAO_COMPLETA_10_VOLUMES_HOTMART_600x600.png',
       includedEbookIds: [
         'financas-do-zero',
         'orcamento-e-organizacao',
@@ -199,7 +199,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
       category: 'idiomas',
       categoryLabel: 'Idiomas',
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_PARLANDO_ITALIANO_COLECAO_COMPLETA_6_VOLUMES_CAPA.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_PARLANDO_ITALIANO_COLECAO_COMPLETA_6_VOLUMES_CAPA.png',
       includedEbookIds: [
         'parlando-italiano-primi-passi',
         'parlando-italiano-conversazione',

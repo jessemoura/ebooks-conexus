@@ -18,8 +18,10 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
   const coverUrl = ebook.coverImage || `/assets/ebooks/${ebook.slug}.jpg`;
 
   const handleTagClick = (e: React.MouseEvent, kw: string) => {
+    e.preventDefault();
     e.stopPropagation();
     navigate(`/ebooks?q=${encodeURIComponent(kw)}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

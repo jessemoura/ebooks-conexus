@@ -53,9 +53,15 @@
   ExpiresByType application/pdf "access plus 1 month"
 </IfModule>
 
-# 5. Cabeçalhos de Segurança Básicos
+# 5. Cabeçalhos de Segurança e Controle de Cache HTML
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-XSS-Protection "1; mode=block"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+  </FilesMatch>
 </IfModule>

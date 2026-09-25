@@ -81,6 +81,7 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
   const handleTagClick = (tag: string) => {
     onClose();
     navigate(`/ebooks?q=${encodeURIComponent(tag)}`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Nome do idioma baseado no idioma ativo da aplicação

@@ -220,7 +220,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano', 'conversação', 'diálogos', 'expressões', 'fluência', 'itália'],
       pages: 148,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107713915A',
       releaseDate: '2026-02-20'
@@ -238,7 +238,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano', 'gramática', 'verbos', 'sintaxe', 'concordância', 'idiomas'],
       pages: 156,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/M107713995L',
       releaseDate: '2026-03-05'
@@ -256,7 +256,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano para viagem', 'turismo na itália', 'viagem', 'gastronomia', 'hotéis', 'transporte'],
       pages: 152,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png',
       featured: true,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/U107714071P',
       releaseDate: '2026-03-20'
@@ -630,7 +630,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italian', 'conversation', 'dialogues', 'expressions', 'fluency', 'italy'],
       pages: 148,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107713915A',
       releaseDate: '2026-02-20'
@@ -648,7 +648,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italian', 'grammar', 'verbs', 'syntax', 'languages'],
       pages: 156,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/M107713995L',
       releaseDate: '2026-03-05'
@@ -666,7 +666,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italian travel', 'tourism italy', 'travel', 'dining', 'hotels', 'transport'],
       pages: 152,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png',
       featured: true,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/U107714071P',
       releaseDate: '2026-03-20'
@@ -1040,7 +1040,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano', 'conversación', 'diálogos', 'expresiones', 'fluidez', 'italia'],
       pages: 148,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107713915A',
       releaseDate: '2026-02-20'
@@ -1058,7 +1058,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano', 'gramática', 'verbos', 'sintaxis', 'idiomas'],
       pages: 156,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/M107713995L',
       releaseDate: '2026-03-05'
@@ -1076,7 +1076,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano para viajes', 'turismo en italia', 'viajes', 'gastronomía', 'hoteles', 'transporte'],
       pages: 152,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png',
       featured: true,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/U107714071P',
       releaseDate: '2026-03-20'

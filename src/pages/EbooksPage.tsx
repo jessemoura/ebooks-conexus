@@ -39,6 +39,14 @@ export const EbooksPage: React.FC = () => {
   const collections = useMemo(() => getCollections(language), [language]);
   const bundles = useMemo(() => getBundles(language), [language]);
 
+  // Função utilitária para busca insensível a acentos e maiúsculas/minúsculas
+  const normalizeText = (text: string) =>
+    text
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .trim();
+
   // Atualiza filtros e modal caso o parâmetro de URL mude
   useEffect(() => {
     const colParam = searchParams.get('collection') || searchParams.get('colecao');
@@ -48,6 +56,10 @@ export const EbooksPage: React.FC = () => {
     const qParam = searchParams.get('q') || searchParams.get('tag') || searchParams.get('busca');
     if (qParam !== null) {
       setSearchQuery(qParam);
+      setSelectedOfferType('all');
+      if (!colParam) {
+        setSelectedCollection('all');
+      }
     }
     const ebookSlug = searchParams.get('ebook') || searchParams.get('detalhes');
     if (ebookSlug) {
@@ -68,11 +80,12 @@ export const EbooksPage: React.FC = () => {
         return false;
       }
       if (searchQuery.trim() !== '') {
-        const query = searchQuery.toLowerCase();
-        const matchesTitle = bundle.title.toLowerCase().includes(query);
-        const matchesSubtitle = bundle.subtitle.toLowerCase().includes(query);
-        const matchesDesc = bundle.description.toLowerCase().includes(query);
-        const matchesCat = bundle.categoryLabel.toLowerCase().includes(query);
+        const cleanQuery = searchQuery.trim().replace(/^#/, '');
+        const queryNorm = normalizeText(cleanQuery);
+        const matchesTitle = normalizeText(bundle.title).includes(queryNorm);
+        const matchesSubtitle = normalizeText(bundle.subtitle).includes(queryNorm);
+        const matchesDesc = normalizeText(bundle.description).includes(queryNorm);
+        const matchesCat = normalizeText(bundle.categoryLabel).includes(queryNorm);
         if (!matchesTitle && !matchesSubtitle && !matchesDesc && !matchesCat) {
           return false;
         }
@@ -95,13 +108,17 @@ export const EbooksPage: React.FC = () => {
         return false;
       }
       if (searchQuery.trim() !== '') {
-        const query = searchQuery.toLowerCase();
-        const matchesTitle = ebook.title.toLowerCase().includes(query);
-        const matchesSubtitle = ebook.subtitle.toLowerCase().includes(query);
-        const matchesDescription = ebook.description.toLowerCase().includes(query);
-        const matchesCollection = ebook.collectionName?.toLowerCase().includes(query) || false;
-        const matchesCategory = ebook.categoryLabel.toLowerCase().includes(query);
-        const matchesKeywords = ebook.keywords.some((kw) => kw.toLowerCase().includes(query));
+        const cleanQuery = searchQuery.trim().replace(/^#/, '');
+        const queryNorm = normalizeText(cleanQuery);
+        const matchesTitle = normalizeText(ebook.title).includes(queryNorm);
+        const matchesSubtitle = normalizeText(ebook.subtitle).includes(queryNorm);
+        const matchesDescription = normalizeText(ebook.description).includes(queryNorm);
+        const matchesCollection = ebook.collectionName ? normalizeText(ebook.collectionName).includes(queryNorm) : false;
+        const matchesCategory = normalizeText(ebook.categoryLabel).includes(queryNorm);
+        const matchesKeywords = ebook.keywords.some((kw) => {
+          const kwNorm = normalizeText(kw);
+          return kwNorm.includes(queryNorm) || queryNorm.includes(kwNorm);
+        });
 
         if (!matchesTitle && !matchesSubtitle && !matchesDescription && !matchesCollection && !matchesCategory && !matchesKeywords) {
           return false;
