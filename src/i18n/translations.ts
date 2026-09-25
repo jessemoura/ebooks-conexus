@@ -1,0 +1,764 @@
+export const translations = {
+  pt: {
+    nav: {
+      home: 'INÍCIO',
+      ebooks: 'E-BOOKS',
+      collections: 'COLEÇÕES',
+      blog: 'BLOG',
+      about: 'SOBRE',
+      contact: 'CONTATO',
+      talkToUs: 'Falar com a CONEXUS'
+    },
+    hero: {
+      badge: 'LEIA. APRENDA. EVOLUA.',
+      title: 'CONHECIMENTO QUE CONECTA.',
+      titleLine1: 'Conhecimento',
+      titleLine2: 'que ',
+      titleHighlight: 'conecta.',
+      subtitle: 'E-books práticos para uma vida com mais liberdade, oportunidades e propósito.',
+      primaryCta: 'Explorar E-books',
+      secondaryCta: 'Conheça nossas coleções',
+      pills: {
+        quality: 'CONTEÚDO DE QUALIDADE',
+        borderless: 'APRENDIZADO SEM FRONTEIRAS',
+        practical: 'APLICAÇÃO NO DIA A DIA',
+        future: 'CONHECIMENTO PARA O SEU FUTURO'
+      },
+      benefits: {
+        b1Title: '100% Digital',
+        b1Desc: 'Acesse quando e onde quiser',
+        b2Title: 'Pagamento seguro',
+        b2Desc: 'Compra simples e protegida',
+        b3Title: 'Leia em qualquer dispositivo',
+        b3Desc: 'Celular, tablet ou computador',
+        b4Title: 'Conhecimento sem limites',
+        b4Desc: 'Novas oportunidades sempre'
+      }
+    },
+    collectionsSection: {
+      badge: 'Séries Exclusivas',
+      title: 'Coleções em Destaque',
+      subtitle: 'Séries completas desenvolvidas para construir um aprendizado progressivo, aprofundado e de alto impacto.',
+      volumes: 'volumes',
+      viewCollection: 'Ver coleção completa',
+      viewAllCollections: 'Ver todas as coleções',
+      officialSeries: 'SÉRIE EDITORIAL OFICIAL',
+      completeSeriesBadge: 'Série Completa',
+      availableVolumes: 'Volumes Disponíveis no Acervo',
+      headerBadge: 'Séries Temáticas',
+      headerTitle: 'Coleções Oficiais',
+      headerSubtitle: 'Projetadas para construir um conhecimento contínuo e progressivo, organizadas em volumes complementares de alto nível.',
+      completeOfferBadge: 'Coleção Completa (100% dos Volumes)',
+      completeOfferDesc: 'Adquira a série integral e domine todo o conteúdo de ponta a ponta.'
+    },
+    bundlesSection: {
+      badge: 'Ofertas Exclusivas',
+      title: 'Coleções Completas (3 Séries Oficiais)',
+      subtitle: 'Adquira todos os volumes de cada coleção em pacotes integrais cuidadosamente estruturados.',
+      filterAll: 'Todas as 25 Ofertas',
+      filterBundles: 'Coleções Completas (3)',
+      filterSingles: 'Volumes Individuais (22)',
+      boxsetBadge: 'Boxset Digital',
+      allVolumesIncluded: 'Todos os {count} volumes inclusos em PDF',
+      viewBundleDetails: 'Conhecer Série Completa'
+    },
+    ebooksSection: {
+      badge: 'Catálogo Selecionado',
+      title: 'E-books em Destaque',
+      subtitle: 'Obras de referência estruturadas para transformar seu conhecimento em resultados práticos.',
+      viewDetails: 'Ver detalhes',
+      viewAllEbooks: 'Ver todo o catálogo',
+      pagesLabel: 'págs.',
+      showingResults: 'Exibindo {count} obra(s) encontrada(s)',
+      emptyTitle: 'Nenhum título encontrado',
+      clearFiltersBtn: 'Limpar busca e filtros',
+      coverInPreparation: 'Capa em preparação',
+      headerBadge: 'Catálogo Editorial',
+      headerTitle: 'Catálogo de E-books & Coleções',
+      headerSubtitle: 'Explore os 22 volumes individuais e as 3 coleções completas em formato digital PDF.'
+    },
+    whyConexus: {
+      badge: 'Nossos Pilares',
+      title: 'Por que CONEXUS E-BOOKS?',
+      subtitle: 'Elevamos a experiência de leitura e estudo a um novo patamar editorial.',
+      p1Title: 'Curadoria & Rigor Técnico',
+      p1Desc: 'Conteúdo validado por especialistas, sem fórmulas mágicas ou superficialidade. Foco na consistência teórica e metodológica.',
+      p2Title: 'Didática Editorial & Fluidez',
+      p2Desc: 'Design de leitura planejado para absorção rápida, visual elegante e estrutura de aprendizado orientada à ação.',
+      p3Title: 'Multiplataforma & Acessibilidade',
+      p3Desc: 'Formato digital em PDF de alta resolução, otimizado para leitura confortável em tablets, computadores e smartphones.',
+      p4Title: 'Atualizações Contínuas',
+      p4Desc: 'Nossos e-books e coleções acompanham as constantes transformações do mercado global e da linguística contemporânea.'
+    },
+    blogSection: {
+      badge: 'Artigos & Insights',
+      title: 'Conteúdos Recentes do Blog',
+      subtitle: 'Artigos estratégicos, análises de mercado e dicas práticas para enriquecer seu repertório intelectual.',
+      readArticle: 'Ler artigo completo',
+      viewAllPosts: 'Acessar o Blog',
+      headerBadge: 'Publicações & Insights',
+      headerTitle: 'Blog CONEXUS',
+      headerSubtitle: 'Artigos analíticos desenvolvidos pela nossa equipe editorial para aprofundar seu entendimento e complementar a leitura de nossos e-books.',
+      allCategory: 'Todos',
+      relatedArticles: 'Artigos Relacionados',
+      relatedEbookBadge: 'Leitura Recomendada',
+      relatedEbookTitle: 'Aprofunde o tema com o E-book Oficial',
+      relatedLinksTitle: 'Explorar Conteúdos Relacionados',
+      articleFaqTitle: 'Perguntas Frequentes (FAQ)',
+      breadcrumbHome: 'Início',
+      breadcrumbBlog: 'Blog'
+    },
+    catalogCta: {
+      badge: 'Acervo Completo',
+      title: 'Pronto para expandir seus horizontes?',
+      subtitle: 'Descubra dezenas de títulos e coleções formulados para quem valoriza aprendizado de verdade.',
+      btn: 'Explorar todo o catálogo'
+    },
+    instagramSection: {
+      badge: 'Comunidade Oficial',
+      title: 'Acompanhe a CONEXUS no Instagram',
+      subtitle: 'Insights diários, lançamentos de novos volumes e bastidores editoriais em @conexusebooks.',
+      followBtn: 'Seguir @conexusebooks'
+    },
+    newsletter: {
+      badge: 'Fique Conectado',
+      title: 'Receba novos lançamentos e artigos',
+      subtitle: 'Cadastre-se gratuitamente para receber em primeira mão novidades sobre e-books, artigos e edições exclusivas.',
+      placeholder: 'Seu melhor e-mail...',
+      btn: 'Inscrever-se',
+      successMsg: 'Obrigado! Seu e-mail foi cadastrado com sucesso.',
+      privacyNote: 'Respeitamos sua privacidade. Cancele quando quiser.'
+    },
+    faqSection: {
+      badge: 'Dúvidas Frequentes',
+      title: 'Perguntas Frequentes',
+      subtitle: 'Esclareça os principais pontos sobre nossas obras, formato digital e acesso às coleções.',
+      notFoundTitle: 'Não encontrou a resposta que procurava?',
+      notFoundSubtitle: 'Envie sua dúvida para a CONEXUS E-BOOKS. Nossa equipe terá prazer em ajudar.',
+      sendQuestionBtn: 'Enviar uma pergunta',
+      formName: 'Seu Nome *',
+      formEmail: 'Seu E-mail *',
+      formQuestion: 'Sua Pergunta ou Dúvida *',
+      formSubmit: 'Enviar Dúvida',
+      successTitle: 'Pergunta enviada com sucesso!',
+      successSubtitle: 'Responderemos sua dúvida diretamente no seu e-mail.',
+      items: [
+        {
+          q: 'Como recebo meu e-book após a compra?',
+          a: 'Imediatamente após a confirmação do pagamento, você recebe um e-mail com o link direto e seguro para baixar seus arquivos em formato PDF de alta resolução.'
+        },
+        {
+          q: 'Posso ler os e-books no celular, tablet ou computador?',
+          a: 'Sim. Os e-books são formatados em PDF padrão universal, compatíveis com qualquer leitor de PDF em smartphones (iOS e Android), tablets, notebooks e computadores.'
+        },
+        {
+          q: 'Posso comprar apenas um volume ou a coleção completa?',
+          a: 'Você tem total liberdade para adquirir volumes individuais conforme seu interesse ou aproveitar as coleções completas para uma jornada de aprendizado sequencial.'
+        },
+        {
+          q: 'Como funciona o pagamento e o acesso aos e-books?',
+          a: 'As transações são processadas em ambiente criptografado e seguro por plataformas homologadas. O acesso ao material baixado é permanente para você consultar sempre que desejar.'
+        },
+        {
+          q: 'Como posso falar com a CONEXUS E-BOOKS?',
+          a: 'Nossa equipe de suporte está à disposição pelo botão oficial do WhatsApp no site e através do nosso canal de atendimento por e-mail para esclarecer qualquer dúvida.'
+        }
+      ]
+    },
+    aboutPage: {
+      badge: 'Selo Editorial',
+      title: 'Sobre a CONEXUS E-BOOKS',
+      seoTitle: 'Sobre a Editora',
+      seoDesc: 'Conheça a história, missão e o rigor editorial da CONEXUS E-BOOKS. Transformando conhecimento técnico e multidisciplinar em livros de alto valor prático.',
+      intro: 'A CONEXUS E-BOOKS nasceu com o compromisso de oferecer publicações digitais com padrão gráfico e editorial de alta sofisticação, unindo rigor analítico a uma leitura fluida, prática e transformadora.',
+      missionTitle: 'Nossa Missão & Propósito',
+      missionP1: 'Acreditamos que o conhecimento verdadeiro não precisa ser árido nem superficial. Nosso propósito é construir pontes entre conceitos avançados e a aplicação concreta na vida de leitores, profissionais e pessoas em busca de constante evolução.',
+      missionP2: 'Cada uma de nossas coleções é meticulosamente estruturada em volumes temáticos, permitindo que o leitor avance com segurança do aprendizado básico ao domínio aprofundado.',
+      qualityTitle: 'O Padrão de Qualidade CONEXUS',
+      q1Title: 'Revisão Rigorosa',
+      q1Desc: 'Todas as obras passam por múltiplos ciclos de checagem conceitual, gramatical e de clareza.',
+      q2Title: 'Design Tipográfico',
+      q2Desc: 'Diagramação planejada para leitura agradável e fluida em qualquer formato digital.',
+      q3Title: 'Suporte ao Leitor',
+      q3Desc: 'Canais diretos de atendimento para esclarecimento de dúvidas sobre nossos materiais.'
+    },
+    contactPage: {
+      badge: 'Atendimento Exclusivo',
+      title: 'Falar com a CONEXUS',
+      seoTitle: 'Fale com a CONEXUS',
+      seoDesc: 'Entre em contato com a equipe editorial e de atendimento da CONEXUS E-BOOKS. Tire dúvidas sobre nossos e-books, coleções e parcerias.',
+      subtitle: 'Estamos à disposição para esclarecer dúvidas sobre os e-books, coleções, parcerias institucionais e suporte ao leitor.',
+      directChannels: 'Canais Diretos',
+      whatsappCardTitle: 'Atendimento via WhatsApp',
+      whatsappCardSubtitle: 'Resposta rápida e direta',
+      whatsappCardDesc: 'Converse diretamente com nosso suporte sobre conteúdos, compras ou esclarecimentos sobre as coleções.',
+      whatsappCardBtn: 'Iniciar conversa no WhatsApp',
+      emailCardTitle: 'E-mail Institucional',
+      formTitle: 'Envie uma Mensagem',
+      formName: 'Nome Completo *',
+      formEmail: 'E-mail *',
+      formSubject: 'Assunto',
+      formSubjectPlaceholder: 'Ex: Dúvida sobre a Coleção Finanças',
+      formMessage: 'Mensagem *',
+      formSubmit: 'Enviar Mensagem',
+      formSuccessTitle: 'Mensagem Recebida!',
+      formSuccessDesc: 'Agradecemos o seu contato. Nossa equipe responderá no seu e-mail o mais breve possível.'
+    },
+    privacyPage: {
+      badge: 'Transparência & Segurança',
+      title: 'Política de Privacidade',
+      seoTitle: 'Política de Privacidade',
+      seoDesc: 'Termos de privacidade, segurança de dados e diretrizes de conformidade da CONEXUS E-BOOKS.',
+      lastUpdated: 'Última atualização: Setembro de 2026',
+      s1Title: '1. Informações Gerais e Compromisso',
+      s1P1: 'valoriza a privacidade de seus visitantes, leitores e clientes. Esta Política de Privacidade descreve como tratamos as informações coletadas por meio de nosso subdomínio oficial e canais diretos de atendimento.',
+      s2Title: '2. Dados Coletados e Finalidade',
+      s2P1: 'Coletamos informações nas seguintes circunstâncias:',
+      s2Li1: 'Inscrição na Newsletter: endereço de e-mail para envio de novidades, lançamentos editoriais e artigos do blog.',
+      s2Li2: 'Formulários de Contato e WhatsApp: nome, e-mail e mensagens enviadas para esclarecimento de dúvidas.',
+      s2Li3: 'Navegação e Cookies: preferências visuais (tema claro/escuro, idioma selecionado) armazenadas localmente para aprimorar sua experiência de uso.',
+      s3Title: '3. Transações e Pagamentos',
+      s3P1: 'As compras dos nossos e-books e coleções são processadas por plataformas de pagamentos seguras e homologadas (como Hotmart). A CONEXUS E-BOOKS não armazena dados de cartão de crédito ou informações financeiras confidenciais em seus servidores.',
+      s4Title: '4. Direitos do Titular',
+      s4P1: 'Você pode a qualquer momento solicitar a confirmação da existência de tratamento, o acesso aos seus dados ou o cancelamento do recebimento de nossos informativos.',
+      s5Title: '5. Contato do Encarregado de Dados',
+      s5P1: 'Para dúvidas sobre esta política ou sobre como seus dados são geridos, entre em contato pelo e-mail institucional.'
+    },
+    footer: {
+      tagline: 'Conhecimento que conecta.',
+      description: 'E-books práticos e cuidadosamente desenvolvidos para transformar conhecimento em aprendizado aplicável ao dia a dia.',
+      quickLinks: 'Links Rápidos',
+      collections: 'Coleções',
+      categories: 'Categorias',
+      allCategoriesLink: '+ Todas as Categorias',
+      institutional: 'Institucional',
+      contactTitle: 'Atendimento',
+      privacyPolicy: 'Política de Privacidade',
+      allRights: 'Todos os direitos reservados.',
+      developedBy: 'Desenvolvido por'
+    },
+    searchPage: {
+      searchPlaceholder: 'Busque por título, tema ou palavra-chave...',
+      allCategories: 'Todos',
+      financeCategory: 'Finanças',
+      languagesCategory: 'Idiomas',
+      allCollections: 'Todas as Coleções',
+      sortBy: 'Ordenar por',
+      sortAZ: 'Título: A a Z',
+      sortZA: 'Título: Z a A',
+      sortNewest: 'Mais Recentes',
+      noResults: 'Nenhum e-book encontrado para os critérios pesquisados.',
+      clearFilters: 'Limpar filtros',
+      clearSearchBtn: 'Limpar',
+      categoriesLabel: 'Categorias:'
+    }
+  },
+  en: {
+    nav: {
+      home: 'HOME',
+      ebooks: 'E-BOOKS',
+      collections: 'COLLECTIONS',
+      blog: 'BLOG',
+      about: 'ABOUT',
+      contact: 'CONTACT',
+      talkToUs: 'Talk to CONEXUS'
+    },
+    hero: {
+      badge: 'READ. LEARN. EVOLVE.',
+      title: 'KNOWLEDGE THAT CONNECTS.',
+      titleLine1: 'Knowledge',
+      titleLine2: 'that ',
+      titleHighlight: 'connects.',
+      subtitle: 'Practical e-books for a life with greater freedom, opportunities, and purpose.',
+      primaryCta: 'Explore E-books',
+      secondaryCta: 'Discover collections',
+      pills: {
+        quality: 'QUALITY CONTENT',
+        borderless: 'LEARNING WITHOUT BORDERS',
+        practical: 'DAILY APPLICATION',
+        future: 'KNOWLEDGE FOR YOUR FUTURE'
+      },
+      benefits: {
+        b1Title: '100% Digital',
+        b1Desc: 'Access whenever and wherever you want',
+        b2Title: 'Secure payment',
+        b2Desc: 'Simple and protected checkout',
+        b3Title: 'Read on any device',
+        b3Desc: 'Phone, tablet or computer',
+        b4Title: 'Boundless knowledge',
+        b4Desc: 'Continuous new opportunities'
+      }
+    },
+    collectionsSection: {
+      badge: 'Exclusive Series',
+      title: 'Featured Collections',
+      subtitle: 'Complete series designed to build progressive, deep, and high-impact learning.',
+      volumes: 'volumes',
+      viewCollection: 'View full collection',
+      viewAllCollections: 'View all collections',
+      officialSeries: 'OFFICIAL EDITORIAL SERIES',
+      completeSeriesBadge: 'Complete Series',
+      availableVolumes: 'Available Volumes in Catalog',
+      headerBadge: 'Thematic Series',
+      headerTitle: 'Official Collections',
+      headerSubtitle: 'Designed to build continuous and progressive knowledge, organized in high-level complementary volumes.',
+      completeOfferBadge: 'Complete Collection (100% of Volumes)',
+      completeOfferDesc: 'Get the full editorial series and master the entire subject from start to finish.'
+    },
+    bundlesSection: {
+      badge: 'Exclusive Offers',
+      title: 'Complete Collections (3 Official Series)',
+      subtitle: 'Acquire all volumes of each series in carefully structured comprehensive bundles.',
+      filterAll: 'All 25 Offers',
+      filterBundles: 'Complete Collections (3)',
+      filterSingles: 'Individual Volumes (22)',
+      boxsetBadge: 'Digital Boxset',
+      allVolumesIncluded: 'All {count} volumes included in PDF',
+      viewBundleDetails: 'Explore Complete Series'
+    },
+    ebooksSection: {
+      badge: 'Selected Catalog',
+      title: 'Featured E-books',
+      subtitle: 'Benchmark publications structured to transform your knowledge into practical results.',
+      viewDetails: 'View details',
+      viewAllEbooks: 'View full catalog',
+      pagesLabel: 'pages',
+      showingResults: 'Showing {count} offer(s) found',
+      emptyTitle: 'No titles found',
+      clearFiltersBtn: 'Clear search & filters',
+      coverInPreparation: 'Cover in preparation',
+      headerBadge: 'Editorial Catalog',
+      headerTitle: 'E-books & Collections Catalog',
+      headerSubtitle: 'Explore all 22 individual volumes and 3 complete collection bundles in digital PDF format.'
+    },
+    whyConexus: {
+      badge: 'Our Pillars',
+      title: 'Why CONEXUS E-BOOKS?',
+      subtitle: 'We elevate the reading and studying experience to a new editorial standard.',
+      p1Title: 'Curation & Technical Rigor',
+      p1Desc: 'Content validated by experts, without superficial shortcuts. Focused on theoretical and practical consistency.',
+      p2Title: 'Editorial Didactics & Flow',
+      p2Desc: 'Reading design tailored for fast absorption, elegant visuals, and action-oriented learning structure.',
+      p3Title: 'Multiplatform & Accessibility',
+      p3Desc: 'High-resolution PDF digital format optimized for comfortable reading across tablets, computers, and smartphones.',
+      p4Title: 'Continuous Updates',
+      p4Desc: 'Our books and series continuously evolve alongside global market and language advancements.'
+    },
+    blogSection: {
+      badge: 'Articles & Insights',
+      title: 'Recent Blog Posts',
+      subtitle: 'Strategic articles, market analysis, and practical insights to enrich your intellectual repertoire.',
+      readArticle: 'Read full article',
+      viewAllPosts: 'Visit Blog',
+      headerBadge: 'Publications & Insights',
+      headerTitle: 'CONEXUS Blog',
+      headerSubtitle: 'Analytical articles developed by our editorial team to deepen your understanding and complement our ebooks.',
+      allCategory: 'All',
+      relatedArticles: 'Related Articles',
+      relatedEbookBadge: 'Recommended Reading',
+      relatedEbookTitle: 'Deepen your knowledge with the Official E-book',
+      relatedLinksTitle: 'Explore Related Content',
+      articleFaqTitle: 'Frequently Asked Questions (FAQ)',
+      breadcrumbHome: 'Home',
+      breadcrumbBlog: 'Blog'
+    },
+    catalogCta: {
+      badge: 'Full Collection',
+      title: 'Ready to expand your horizons?',
+      subtitle: 'Discover dozens of titles formulated for those who truly value in-depth knowledge.',
+      btn: 'Explore the full catalog'
+    },
+    instagramSection: {
+      badge: 'Official Community',
+      title: 'Follow CONEXUS on Instagram',
+      subtitle: 'Insights, new volume releases, and editorial behind-the-scenes at @conexusebooks.',
+      followBtn: 'Follow @conexusebooks'
+    },
+    newsletter: {
+      badge: 'Stay Connected',
+      title: 'Get new releases and articles',
+      subtitle: 'Subscribe for free to receive updates on new ebooks, articles, and exclusive editions.',
+      placeholder: 'Your best email...',
+      btn: 'Subscribe',
+      successMsg: 'Thank you! Your email has been registered.',
+      privacyNote: 'We respect your privacy. Unsubscribe anytime.'
+    },
+    faqSection: {
+      badge: 'Frequent Questions',
+      title: 'Frequently Asked Questions',
+      subtitle: 'Clarify key questions about our publications, digital format, and collection access.',
+      notFoundTitle: "Didn't find what you were looking for?",
+      notFoundSubtitle: 'Send your question to CONEXUS E-BOOKS. Our team will be happy to help.',
+      sendQuestionBtn: 'Send a question',
+      formName: 'Your Name *',
+      formEmail: 'Your Email *',
+      formQuestion: 'Your Question *',
+      formSubmit: 'Submit Question',
+      successTitle: 'Question sent successfully!',
+      successSubtitle: 'We will reply to your question directly via email.',
+      items: [
+        {
+          q: 'How do I receive my ebook after purchase?',
+          a: 'Immediately after payment confirmation, you receive an email with a direct and secure link to download your files in high-resolution PDF format.'
+        },
+        {
+          q: 'Can I read the ebooks on phone, tablet, or computer?',
+          a: 'Yes. Ebooks are formatted in universal standard PDF, compatible with any PDF reader on smartphones (iOS and Android), tablets, laptops, and desktop computers.'
+        },
+        {
+          q: 'Can I purchase just a single volume or the full collection?',
+          a: 'You have complete freedom to acquire individual volumes according to your interest or purchase complete collections for a structured learning path.'
+        },
+        {
+          q: 'How does payment and ebook access work?',
+          a: 'Transactions are processed in a secure, encrypted environment by certified platforms. Access to downloaded materials is permanent for you to consult whenever you want.'
+        },
+        {
+          q: 'How can I contact CONEXUS E-BOOKS?',
+          a: 'Our support team is available via the official WhatsApp button on the website and through our email customer support channel to clarify any questions.'
+        }
+      ]
+    },
+    aboutPage: {
+      badge: 'Editorial Label',
+      title: 'About CONEXUS E-BOOKS',
+      seoTitle: 'About the Publishing House',
+      seoDesc: 'Discover the history, mission, and editorial rigor of CONEXUS E-BOOKS. Transforming technical and multidisciplinary knowledge into high-value practical books.',
+      intro: 'CONEXUS E-BOOKS was created with the commitment to offer digital publications with high-standard graphic and editorial excellence, uniting analytical rigor with fluent, practical, and transformative reading.',
+      missionTitle: 'Our Mission & Purpose',
+      missionP1: 'We believe true knowledge does not need to be arid or superficial. Our purpose is to build bridges between advanced concepts and practical application for readers, professionals, and lifelong learners.',
+      missionP2: 'Each of our collections is meticulously structured in thematic volumes, allowing the reader to progress with confidence from fundamentals to advanced mastery.',
+      qualityTitle: 'The CONEXUS Quality Standard',
+      q1Title: 'Rigorous Review',
+      q1Desc: 'All works undergo multiple cycles of conceptual, grammatical, and clarity verification.',
+      q2Title: 'Typographic Design',
+      q2Desc: 'Layout designed for enjoyable and fluid reading across any digital format.',
+      q3Title: 'Reader Support',
+      q3Desc: 'Direct support channels for questions and assistance regarding our materials.'
+    },
+    contactPage: {
+      badge: 'Exclusive Support',
+      title: 'Talk to CONEXUS',
+      seoTitle: 'Contact CONEXUS',
+      seoDesc: 'Get in touch with the editorial and customer service team at CONEXUS E-BOOKS. Ask questions about our ebooks, collections, and partnerships.',
+      subtitle: 'We are at your disposal for questions regarding ebooks, collections, institutional partnerships, and reader support.',
+      directChannels: 'Direct Channels',
+      whatsappCardTitle: 'WhatsApp Support',
+      whatsappCardSubtitle: 'Fast and direct response',
+      whatsappCardDesc: 'Chat directly with our support team regarding content, purchases, or inquiries about collections.',
+      whatsappCardBtn: 'Start WhatsApp conversation',
+      emailCardTitle: 'Institutional Email',
+      formTitle: 'Send a Message',
+      formName: 'Full Name *',
+      formEmail: 'Email *',
+      formSubject: 'Subject',
+      formSubjectPlaceholder: 'Ex: Question about the Finance Collection',
+      formMessage: 'Message *',
+      formSubmit: 'Send Message',
+      formSuccessTitle: 'Message Received!',
+      formSuccessDesc: 'Thank you for reaching out. Our team will respond to your email as soon as possible.'
+    },
+    privacyPage: {
+      badge: 'Transparency & Security',
+      title: 'Privacy Policy',
+      seoTitle: 'Privacy Policy',
+      seoDesc: 'Privacy terms, data security, and compliance guidelines of CONEXUS E-BOOKS.',
+      lastUpdated: 'Last updated: September 2026',
+      s1Title: '1. General Information and Commitment',
+      s1P1: 'values the privacy of its visitors, readers, and clients. This Privacy Policy describes how we handle information collected through our official subdomain and direct support channels.',
+      s2Title: '2. Collected Data and Purpose',
+      s2P1: 'We collect information in the following circumstances:',
+      s2Li1: 'Newsletter Subscription: email address for sending releases, editorial updates, and blog articles.',
+      s2Li2: 'Contact and WhatsApp Forms: name, email, and messages sent for inquiries.',
+      s2Li3: 'Browsing and Cookies: visual preferences (light/dark theme, selected language) stored locally to enhance your browsing experience.',
+      s3Title: '3. Transactions and Payments',
+      s3P1: 'Purchases of our ebooks and collections are processed by secure, verified payment platforms (such as Hotmart). CONEXUS E-BOOKS does not store credit card numbers or sensitive financial data on its servers.',
+      s4Title: '4. Data Subject Rights',
+      s4P1: 'You may at any time request confirmation of data processing, access to your data, or cancellation of our informative mailings.',
+      s5Title: '5. Data Officer Contact',
+      s5P1: 'For questions regarding this policy or how your data is managed, contact us via our institutional email.'
+    },
+    footer: {
+      tagline: 'Knowledge that connects.',
+      description: 'Practical and carefully developed e-books to transform knowledge into daily applicable learning.',
+      quickLinks: 'Quick Links',
+      collections: 'Collections',
+      categories: 'Categories',
+      allCategoriesLink: '+ All Categories',
+      institutional: 'Institutional',
+      contactTitle: 'Contact Us',
+      privacyPolicy: 'Privacy Policy',
+      allRights: 'All rights reserved.',
+      developedBy: 'Developed by'
+    },
+    searchPage: {
+      searchPlaceholder: 'Search by title, topic, or keyword...',
+      allCategories: 'All',
+      financeCategory: 'Finance',
+      languagesCategory: 'Languages',
+      allCollections: 'All Collections',
+      sortBy: 'Sort by',
+      sortAZ: 'Title: A to Z',
+      sortZA: 'Title: Z to A',
+      sortNewest: 'Most Recent',
+      noResults: 'No ebooks found matching your search criteria.',
+      clearFilters: 'Clear filters',
+      clearSearchBtn: 'Clear',
+      categoriesLabel: 'Categories:'
+    }
+  },
+  es: {
+    nav: {
+      home: 'INICIO',
+      ebooks: 'E-BOOKS',
+      collections: 'COLECCIONES',
+      blog: 'BLOG',
+      about: 'SOBRE',
+      contact: 'CONTACTO',
+      talkToUs: 'Hablar con CONEXUS'
+    },
+    hero: {
+      badge: 'LEE. APRENDE. EVOLUCIONA.',
+      title: 'Conocimiento que conecta.',
+      titleLine1: 'Conocimiento',
+      titleLine2: 'que ',
+      titleHighlight: 'conecta.',
+      subtitle: 'E-books prácticos para una vida con más libertad, oportunidades y propósito.',
+      primaryCta: 'Explorar E-books',
+      secondaryCta: 'Conoce nuestras colecciones',
+      pills: {
+        quality: 'CONTENIDO DE CALIDAD',
+        borderless: 'APRENDIZAJE SIN FRONTERAS',
+        practical: 'APLICACIÓN EN EL DÍA A DÍA',
+        future: 'CONOCIMIENTO PARA TU FUTURO'
+      },
+      benefits: {
+        b1Title: '100% Digital',
+        b1Desc: 'Accede cuando y donde quieras',
+        b2Title: 'Pago seguro',
+        b2Desc: 'Compra simple y protegida',
+        b3Title: 'Lee en cualquier dispositivo',
+        b3Desc: 'Móvil, tablet o computadora',
+        b4Title: 'Conocimiento sin límites',
+        b4Desc: 'Nuevas oportunidades siempre'
+      }
+    },
+    collectionsSection: {
+      badge: 'Series Exclusivas',
+      title: 'Colecciones Destacadas',
+      subtitle: 'Series completas diseñadas para construir un aprendizaje progresivo, profundo y de alto impacto.',
+      volumes: 'volúmenes',
+      viewCollection: 'Ver colección completa',
+      viewAllCollections: 'Ver todas las colecciones',
+      officialSeries: 'SERIE EDITORIAL OFICIAL',
+      completeSeriesBadge: 'Serie Completa',
+      availableVolumes: 'Volúmenes Disponibles en el Catálogo',
+      headerBadge: 'Series Temáticas',
+      headerTitle: 'Colecciones Oficiales',
+      headerSubtitle: 'Diseñadas para construir un conocimiento continuo y progresivo, organizadas en volúmenes complementarios de alto nivel.',
+      completeOfferBadge: 'Colección Completa (100% de los Volúmenes)',
+      completeOfferDesc: 'Adquiera la serie integral y domine todo el contenido de principio a fin.'
+    },
+    bundlesSection: {
+      badge: 'Ofertas Exclusivas',
+      title: 'Colecciones Completas (3 Series Oficiales)',
+      subtitle: 'Adquiera todos los volúmenes de cada serie en paquetes integrales cuidadosamente estructurados.',
+      filterAll: 'Todas las 25 Ofertas',
+      filterBundles: 'Colecciones Completas (3)',
+      filterSingles: 'Volúmenes Individuales (22)',
+      boxsetBadge: 'Boxset Digital',
+      allVolumesIncluded: 'Todos los {count} volúmenes incluidos en PDF',
+      viewBundleDetails: 'Ver Serie Completa'
+    },
+    ebooksSection: {
+      badge: 'Catálogo Seleccionado',
+      title: 'E-books Destacados',
+      subtitle: 'Obras de referencia estructuradas para transformar su conocimiento en resultados prácticos.',
+      viewDetails: 'Ver detalles',
+      viewAllEbooks: 'Ver todo el catálogo',
+      pagesLabel: 'págs.',
+      showingResults: 'Mostrando {count} oferta(s) encontrada(s)',
+      emptyTitle: 'Ningún título encontrado',
+      clearFiltersBtn: 'Limpar búsqueda y filtros',
+      coverInPreparation: 'Portada en preparación',
+      headerBadge: 'Catálogo Editorial',
+      headerTitle: 'Catálogo de E-books y Colecciones',
+      headerSubtitle: 'Explore los 22 volúmenes individuales y las 3 colecciones completas en formato digital PDF.'
+    },
+    whyConexus: {
+      badge: 'Nuestros Pilares',
+      title: '¿Por qué CONEXUS E-BOOKS?',
+      subtitle: 'Elevamos la experiencia de lectura y estudio a un nuevo estándar editorial.',
+      p1Title: 'Curaduría y Rigor Técnico',
+      p1Desc: 'Contenido validado por expertos, sin fórmulas mágicas ni superficialidad. Enfoque en la solidez metodológica.',
+      p2Title: 'Didáctica Editorial y Fluidez',
+      p2Desc: 'Diseño de lectura pensado para una absorción ágil, visual elegante y estructura orientada a la acción.',
+      p3Title: 'Multiplataforma y Accesibilidad',
+      p3Desc: 'Formato digital en PDF de alta resolución, optimizado para una lectura cómoda en cualquier dispositivo.',
+      p4Title: 'Actualizaciones Continuas',
+      p4Desc: 'Nuestras obras evolucionan constantemente junto a las transformaciones del mercado global.'
+    },
+    blogSection: {
+      badge: 'Artículos & Insights',
+      title: 'Contenidos Recientes del Blog',
+      subtitle: 'Artículos estratégicos, análisis de mercado y consejos prácticos para enriquecer su repertorio intelectual.',
+      readArticle: 'Leer artículo completo',
+      viewAllPosts: 'Acceder al Blog',
+      headerBadge: 'Publicaciones & Insights',
+      headerTitle: 'Blog CONEXUS',
+      headerSubtitle: 'Artículos analíticos desarrollados por nuestro equipo editorial para profundizar su comprensión y complementar la lectura de nuestros e-books.',
+      allCategory: 'Todos',
+      relatedArticles: 'Artículos Relacionados',
+      relatedEbookBadge: 'Lectura Recomendada',
+      relatedEbookTitle: 'Profundice el tema con el E-book Oficial',
+      relatedLinksTitle: 'Explorar Contenidos Relacionados',
+      articleFaqTitle: 'Preguntas Frecuentes (FAQ)',
+      breadcrumbHome: 'Inicio',
+      breadcrumbBlog: 'Blog'
+    },
+    catalogCta: {
+      badge: 'Acervo Completo',
+      title: '¿Listo para expandir sus horizontes?',
+      subtitle: 'Descubra decenas de títulos y colecciones formulados para quienes valoran el aprendizaje real.',
+      btn: 'Explorar todo el catálogo'
+    },
+    instagramSection: {
+      badge: 'Comunidad Oficial',
+      title: 'Siga a CONEXUS en Instagram',
+      subtitle: 'Insights diarios, lanzamientos de nuevos volúmenes y entretelones editoriales en @conexusebooks.',
+      followBtn: 'Seguir @conexusebooks'
+    },
+    newsletter: {
+      badge: 'Manténgase Conectado',
+      title: 'Reciba nuevos lanzamentos y artículos',
+      subtitle: 'Suscríbase gratis para recibir de primera mano novedades sobre e-books, artículos y ediciones exclusivas.',
+      placeholder: 'Su mejor correo...',
+      btn: 'Suscribirse',
+      successMsg: '¡Gracias! Su correo ha sido registrado con éxito.',
+      privacyNote: 'Respetamos su privacidad. Cancele cuando quiera.'
+    },
+    faqSection: {
+      badge: 'Dudas Frecuentes',
+      title: 'Preguntas Frecuentes',
+      subtitle: 'Aclare los puntos clave sobre nuestras obras, formato digital y acceso a las colecciones.',
+      notFoundTitle: '¿No encontró la respuesta que buscaba?',
+      notFoundSubtitle: 'Envíe su consulta a CONEXUS E-BOOKS. Nuestro equipo estará encantado de ayudarle.',
+      sendQuestionBtn: 'Enviar una pregunta',
+      formName: 'Su Nombre *',
+      formEmail: 'Su Correo Electrónico *',
+      formQuestion: 'Su Pregunta o Consulta *',
+      formSubmit: 'Enviar Consulta',
+      successTitle: '¡Pregunta enviada con éxito!',
+      successSubtitle: 'Responderemos a su consulta directamente en su correo electrónico.',
+      items: [
+        {
+          q: '¿Cómo recibo mi e-book tras la compra?',
+          a: 'Inmediatamente después de la confirmación del pago, recibe un correo con el enlace directo y seguro para descargar sus archivos en formato PDF de alta resolución.'
+        },
+        {
+          q: '¿Puedo leer los e-books en móvil, tablet o computadora?',
+          a: 'Sí. Los e-books están formateados en PDF estándar universal, compatibles con cualquier lector de PDF en smartphones (iOS y Android), tablets, portátiles y computadoras.'
+        },
+        {
+          q: '¿Puedo comprar solo un volumen o la colección completa?',
+          a: 'Tiene total libertad para adquirir volúmenes individuales según su interés o aprovechar las colecciones completas para un itinerario de aprendizaje progresivo.'
+        },
+        {
+          q: '¿Cómo funciona el pago y el acceso a los e-books?',
+          a: 'Las transacciones se procesan en un entorno cifrado y seguro mediante plataformas certificadas. El acceso al material descargado es permanente para que lo consulte siempre que lo desee.'
+        },
+        {
+          q: '¿Cómo puedo comunicarme con CONEXUS E-BOOKS?',
+          a: 'Nuestro equipo de soporte está a su disposición mediante el botón oficial de WhatsApp en el sitio y a través de nuestro correo de atención para responder cualquier duda.'
+        }
+      ]
+    },
+    aboutPage: {
+      badge: 'Sello Editorial',
+      title: 'Sobre CONEXUS E-BOOKS',
+      seoTitle: 'Sobre la Editorial',
+      seoDesc: 'Conozca la historia, misión y rigor editorial de CONEXUS E-BOOKS. Transformando conocimiento técnico y multidisciplinario en libros de alto valor práctico.',
+      intro: 'CONEXUS E-BOOKS nació con el compromiso de ofrecer publicaciones digitales con un estándar gráfico y editorial de alta sofisticación, uniendo rigor analítico con una lectura fluida, práctica y transformadora.',
+      missionTitle: 'Nuestra Misión y Propósito',
+      missionP1: 'Creemos que el conocimiento verdadero no tiene por qué ser árido ni superficial. Nuestro propósito es tender puentes entre conceptos avanzados y la aplicación concreta en la vida de lectores, profesionales y personas en constante evolución.',
+      missionP2: 'Cada una de nuestras colecciones está meticulosamente estructurada en volúmenes temáticos, permitiendo al lector avanzar con seguridad desde el aprendizaje básico hasta el dominio profundo.',
+      qualityTitle: 'El Estándar de Calidad CONEXUS',
+      q1Title: 'Revisión Rigurosa',
+      q1Desc: 'Todas las obras pasan por múltiples ciclos de comprobación conceptual, gramatical y de claridad.',
+      q2Title: 'Diseño Tipográfico',
+      q2Desc: 'Maquetación pensada para una lectura agradable y fluida en cualquier formato digital.',
+      q3Title: 'Soporte al Lector',
+      q3Desc: 'Canales directos de atención para responder consultas sobre nuestros materiales.'
+    },
+    contactPage: {
+      badge: 'Atención Exclusiva',
+      title: 'Hablar con CONEXUS',
+      seoTitle: 'Contacte a CONEXUS',
+      seoDesc: 'Póngase en contacto con el equipo editorial y de atención de CONEXUS E-BOOKS. Resuelva dudas sobre nuestros e-books, colecciones y alianzas.',
+      subtitle: 'Estamos a su disposición para resolver dudas sobre los e-books, colecciones, alianzas institucionales y soporte al lector.',
+      directChannels: 'Canales Directos',
+      whatsappCardTitle: 'Atención por WhatsApp',
+      whatsappCardSubtitle: 'Respuesta rápida y directa',
+      whatsappCardDesc: 'Hable directamente con nuestro equipo de soporte sobre contenidos, compras o consultas sobre colecciones.',
+      whatsappCardBtn: 'Iniciar conversación en WhatsApp',
+      emailCardTitle: 'Correo Institucional',
+      formTitle: 'Envíe un Mensaje',
+      formName: 'Nombre Completo *',
+      formEmail: 'Correo Electrónico *',
+      formSubject: 'Asunto',
+      formSubjectPlaceholder: 'Ej: Consulta sobre la Colección Finanzas',
+      formMessage: 'Mensaje *',
+      formSubmit: 'Enviar Mensaje',
+      formSuccessTitle: '¡Mensaje Recibido!',
+      formSuccessDesc: 'Agradecemos su contacto. Nuestro equipo responderá a su correo lo antes posible.'
+    },
+    privacyPage: {
+      badge: 'Transparencia & Seguridad',
+      title: 'Política de Privacidad',
+      seoTitle: 'Política de Privacidad',
+      seoDesc: 'Términos de privacidad, seguridad de datos y directrices de conformidad de CONEXUS E-BOOKS.',
+      lastUpdated: 'Última actualización: Septiembre de 2026',
+      s1Title: '1. Información General y Compromiso',
+      s1P1: 'valora la privacidad de sus visitantes, lectores y clientes. Esta Política de Privacidad describe cómo tratamos la información recopilada a través de nuestro subdominio oficial y canales directos de atención.',
+      s2Title: '2. Datos Recopilados y Finalidad',
+      s2P1: 'Recopilamos información en las siguientes circunstancias:',
+      s2Li1: 'Suscripción al Boletín: dirección de correo para el envío de novedades, lanzamientos editoriales y artículos del blog.',
+      s2Li2: 'Formularios de Contacto y WhatsApp: nombre, correo y mensajes enviados para responder dudas.',
+      s2Li3: 'Navegación y Cookies: preferencias visuales (tema claro/oscuro, idioma seleccionado) almacenadas localmente para mejorar su experiencia de uso.',
+      s3Title: '3. Transacciones y Pagos',
+      s3P1: 'Las compras de nuestros e-books y colecciones se procesan mediante plataformas de pago seguras y homologadas (como Hotmart). CONEXUS E-BOOKS no almacena datos de tarjetas de crédito o información financiera confidencial en sus servidores.',
+      s4Title: '4. Derechos del Titular',
+      s4P1: 'Puede solicitar en cualquier momento la confirmación del tratamiento, el acceso a sus datos o la cancelación del envío de nuestras comunicaciones.',
+      s5Title: '5. Contacto del Responsable de Datos',
+      s5P1: 'Para dudas sobre esta política o sobre cómo se gestionan sus datos, comuníquese con nosotros por nuestro correo institucional.'
+    },
+    footer: {
+      tagline: 'Conocimiento que conecta.',
+      description: 'E-books prácticos y cuidadosamente desarrollados para transformar conocimiento en aprendizaje aplicable al día a día.',
+      quickLinks: 'Enlaces Rápidos',
+      collections: 'Colecciones',
+      categories: 'Categorías',
+      allCategoriesLink: '+ Todas las Categorías',
+      institutional: 'Institucional',
+      contactTitle: 'Atención',
+      privacyPolicy: 'Política de Privacidad',
+      allRights: 'Todos los derechos reservados.',
+      developedBy: 'Desarrollado por'
+    },
+    searchPage: {
+      searchPlaceholder: 'Busque por título, tema o palabra clave...',
+      allCategories: 'Todos',
+      financeCategory: 'Finanzas',
+      languagesCategory: 'Idiomas',
+      allCollections: 'Todas las Colecciones',
+      sortBy: 'Ordenar por',
+      sortAZ: 'Título: A a Z',
+      sortZA: 'Título: Z a A',
+      sortNewest: 'Más Recientes',
+      noResults: 'Ningún e-book encontrado para los criterios de búsqueda.',
+      clearFilters: 'Limpar filtros',
+      clearSearchBtn: 'Limpiar',
+      categoriesLabel: 'Categorías:'
+    }
+  }
+};

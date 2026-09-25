@@ -1,0 +1,44 @@
+import React from 'react';
+import { siteConfig } from '../../config/siteConfig';
+
+/**
+ * Botão Oficial Flutuante do WhatsApp
+ * Design refinado: círculo verde limpo, ícone oficial branco, pulso suave e sombra discreta.
+ */
+export const WhatsAppButton: React.FC = () => {
+  return (
+    <a
+      href={siteConfig.whatsapp.directUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-float-btn"
+      aria-label="Falar com a CONEXUS pelo WhatsApp"
+      title="Atendimento CONEXUS no WhatsApp"
+      id="floating-whatsapp-btn"
+    >
+      {/* Pulso externo suave e discreto (um único anel elegante) */}
+      <span className="whatsapp-pulse" aria-hidden="true" />
+      
+      {/* Ícone Oficial WhatsApp Vetorial Branco */}
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ position: 'relative', zIndex: 2 }}
+      >
+        <path
+          d="M17.507 14.307c-.254-.127-1.505-.743-1.74-.828-.233-.085-.403-.127-.573.127-.17.255-.658.828-.806.998-.15.17-.297.19-.55.064-.255-.127-1.077-.397-2.052-1.267-.759-.677-1.272-1.514-1.421-1.769-.15-.255-.016-.393.111-.52.115-.114.255-.297.382-.446.127-.148.17-.254.255-.424.085-.17.042-.318-.021-.446-.064-.127-.573-1.38-.786-1.89-.206-.498-.417-.43-.573-.438-.148-.008-.318-.009-.488-.009-.17 0-.446.064-.679.318-.233.255-.892.871-.892 2.124 0 1.253.913 2.463 1.04 2.633.127.17 1.796 2.742 4.35 3.844.608.262 1.082.418 1.452.536.61.194 1.165.167 1.603.101.489-.073 1.505-.615 1.718-1.21.213-.594.213-1.103.149-1.21-.064-.106-.234-.17-.488-.297z"
+          fill="#FFFFFF"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M12 2C6.477 2 2 6.477 2 12c0 1.892.524 3.662 1.436 5.174L2.05 21.95l4.908-1.341A9.958 9.958 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.182a8.136 8.136 0 0 1-4.328-1.238l-.31-.192-2.91.795.8-2.827-.206-.328A8.147 8.147 0 0 1 3.818 12C3.818 7.49 7.49 3.818 12 3.818c4.51 0 8.182 3.673 8.182 8.182 0 4.51-3.673 8.182-8.182 8.182z"
+          fill="#FFFFFF"
+        />
+      </svg>
+    </a>
+  );
+};

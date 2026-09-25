@@ -1,0 +1,108 @@
+:root {
+  /* Brand Primary: Verde Profundo Institucional CONEXUS */
+  --color-green-950: #05140f;
+  --color-green-900: #0a271c;
+  --color-green-850: #0e3526;
+  --color-green-800: #134633;
+  --color-green-700: #1a5c43;
+  --color-green-600: #237657;
+  --color-green-500: #2e946e;
+  --color-green-400: #42b88b;
+  --color-green-300: #71d4ae;
+
+  /* Brand Accent: Laranja Vibrante / Coral Editorial */
+  --color-orange-500: #e76f51;
+  --color-orange-600: #d85736;
+  --color-orange-400: #f4a261;
+  --color-orange-300: #f8c291;
+  --color-orange-gradient: linear-gradient(135deg, #f4a261 0%, #e76f51 50%, #d85736 100%);
+  --color-orange-glow: rgba(231, 111, 81, 0.28);
+
+  /* Brand Support: Dourado Quente Nobre */
+  --color-gold-300: #f7e6b5;
+  --color-gold-400: #eac66f;
+  --color-gold-500: #d4af37;
+  --color-gold-600: #bfa030;
+  --color-gold-gradient: linear-gradient(135deg, #fae8b8 0%, #d4af37 50%, #b8903b 100%);
+  --color-gold-glow: rgba(212, 175, 55, 0.25);
+
+  /* Light Theme Surfaces & Text (Warm Paper / Cream / Off-White) */
+  --bg-primary: #fbf9f5;
+  --bg-secondary: #f4eee3;
+  --bg-tertiary: #ebe3d5;
+  --bg-card: #ffffff;
+  --bg-card-warm: #fcfaf6;
+  --bg-glass: rgba(255, 255, 255, 0.9);
+  --bg-glass-nav: rgba(251, 249, 245, 0.92);
+  --bg-dark-block: #0a271c;
+  --bg-dark-card: #0e3526;
+
+  --text-primary: #182821;
+  --text-secondary: #42554d;
+  --text-muted: #6b7f76;
+  --text-inverse: #fdfbf7;
+  --text-accent: #d85736;
+  --text-green: #134633;
+  --text-gold: #b3882a;
+
+  --border-subtle: rgba(19, 70, 51, 0.08);
+  --border-medium: rgba(19, 70, 51, 0.16);
+  --border-green: rgba(26, 92, 67, 0.25);
+  --border-orange: rgba(231, 111, 81, 0.35);
+  --border-gold: rgba(212, 175, 55, 0.35);
+
+  --shadow-sm: 0 2px 8px rgba(10, 39, 28, 0.04);
+  --shadow-md: 0 8px 24px rgba(10, 39, 28, 0.08);
+  --shadow-lg: 0 16px 40px rgba(10, 39, 28, 0.12);
+  --shadow-book: 0 14px 32px rgba(10, 39, 28, 0.18), 0 2px 6px rgba(10, 39, 28, 0.1);
+  --shadow-orange: 0 8px 25px rgba(231, 111, 81, 0.3);
+  --shadow-gold: 0 8px 25px rgba(212, 175, 55, 0.25);
+
+  /* Typography */
+  --font-serif: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout & Transitions */
+  --max-width: 1240px;
+  --header-height: 88px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #06130d;
+  --bg-secondary: #0b1e16;
+  --bg-tertiary: #10291e;
+  --bg-card: #0d221a;
+  --bg-card-warm: #112a20;
+  --bg-glass: rgba(13, 34, 26, 0.9);
+  --bg-glass-nav: rgba(6, 19, 13, 0.92);
+  --bg-dark-block: #040c08;
+  --bg-dark-card: #081a13;
+
+  --text-primary: #f5fbf7;
+  --text-secondary: #cbdcd3;
+  --text-muted: #8ea89c;
+  --text-inverse: #06130d;
+  --text-accent: #f4a261;
+  --text-green: #71d4ae;
+  --text-gold: #eac66f;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-green: rgba(66, 184, 139, 0.3);
+  --border-orange: rgba(244, 162, 97, 0.4);
+  --border-gold: rgba(234, 198, 111, 0.35);
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 50px rgba(0, 0, 0, 0.65);
+  --shadow-book: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(66, 184, 139, 0.1);
+  --shadow-orange: 0 8px 30px rgba(231, 111, 81, 0.25);
+  --shadow-gold: 0 8px 30px rgba(212, 175, 55, 0.2);
+}
