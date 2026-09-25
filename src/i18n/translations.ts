@@ -89,7 +89,8 @@ export const translations = {
       secureCheckout: 'Acesso imediato em PDF de alta resolução',
       talkWhatsapp: 'Tirar dúvidas no WhatsApp',
       closeModal: 'Fechar detalhes',
-      exploreTag: 'Ver todos os e-books com #{tag}'
+      exploreTag: 'Ver todos os e-books com #{tag}',
+      checkoutUnavailable: 'Disponível em breve na Hotmart'
     },
     whyConexus: {
       badge: 'Nossos Pilares',
@@ -357,7 +358,8 @@ export const translations = {
       secureCheckout: 'Instant access in high-resolution PDF',
       talkWhatsapp: 'Ask questions on WhatsApp',
       closeModal: 'Close details',
-      exploreTag: 'View all ebooks with #{tag}'
+      exploreTag: 'View all ebooks with #{tag}',
+      checkoutUnavailable: 'Available soon on Hotmart'
     },
     whyConexus: {
       badge: 'Our Pillars',
@@ -625,7 +627,8 @@ export const translations = {
       secureCheckout: 'Acceso inmediato en PDF de alta resolución',
       talkWhatsapp: 'Consultar por WhatsApp',
       closeModal: 'Cerrar detalles',
-      exploreTag: 'Ver todos los e-books con #{tag}'
+      exploreTag: 'Ver todos los e-books con #{tag}',
+      checkoutUnavailable: 'Disponible próximamente en Hotmart'
     },
     whyConexus: {
       badge: 'Nuestros Pilares',

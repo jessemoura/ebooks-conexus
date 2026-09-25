@@ -10,12 +10,11 @@ import {
   FileText, 
   Layers, 
   Sparkles, 
-  CheckCircle2, 
   ArrowRight, 
   Tag, 
   Calendar, 
   Globe, 
-  ShieldCheck,
+  Lock,
   Image as ImageIcon
 } from 'lucide-react';
 
@@ -62,28 +61,29 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
 
   if (!isOpen || !ebook) return null;
 
+  // Capa oficial cadastrada no catálogo
   const coverUrl = ebook.coverImage || `/assets/ebooks/${ebook.slug}.jpg`;
 
-  // WhatsApp Message according to language
+  // Mensagem contextual para o canal de atendimento WhatsApp (exclusivo para tirar dúvidas)
   const getWhatsAppMessage = () => {
     if (language === 'en') {
-      return `Hello! I would like more information and purchase details about the e-book: "${ebook.title}".`;
+      return `Hello! I have a question regarding the e-book: "${ebook.title}".`;
     }
     if (language === 'es') {
-      return `¡Hola! Me gustaría más información y detalles para adquirir el e-book: "${ebook.title}".`;
+      return `¡Hola! Tengo una consulta sobre el e-book: "${ebook.title}".`;
     }
-    return `Olá! Gostaria de mais informações e detalhes para adquirir o e-book: "${ebook.title}".`;
+    return `Olá! Gostaria de tirar dúvidas sobre o e-book: "${ebook.title}".`;
   };
 
   const whatsAppInquiryUrl = `https://wa.me/${siteConfig.whatsapp.number}?text=${encodeURIComponent(getWhatsAppMessage())}`;
 
-  // Handle clicking on a tag
+  // Ao clicar em uma tag, fecha o modal e filtra o catálogo pela tag
   const handleTagClick = (tag: string) => {
     onClose();
     navigate(`/ebooks?q=${encodeURIComponent(tag)}`);
   };
 
-  // Language display name
+  // Nome do idioma baseado no idioma ativo da aplicação
   const getLanguageLabel = () => {
     if (language === 'en') return 'English';
     if (language === 'es') return 'Español';
@@ -103,7 +103,7 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
         alignItems: 'center',
         justifyContent: 'center',
         padding: '1.2rem',
-        background: 'rgba(5, 12, 9, 0.78)',
+        background: 'rgba(5, 12, 9, 0.82)',
         backdropFilter: 'blur(10px)',
         WebkitBackdropFilter: 'blur(10px)',
         animation: 'fadeIn 0.2s ease-out'
@@ -180,9 +180,11 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
               <Sparkles size={13} />
               <span>{t.ebooksSection.modalTitle}</span>
             </span>
-            <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 600 }}>
-              &bull; {ebook.category === 'financas' ? t.searchPage.financeCategory : t.searchPage.languagesCategory}
-            </span>
+            {ebook.categoryLabel && (
+              <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                &bull; {ebook.categoryLabel}
+              </span>
+            )}
           </div>
 
           <button
@@ -215,9 +217,9 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
           </button>
         </div>
 
-        {/* Corpo do Modal (Layout em 2 colunas no Desktop e 1 coluna no Mobile) */}
+        {/* Corpo do Modal */}
         <div className="ebook-modal-grid">
-          {/* Coluna 1: Capa Oficial em Alta Resolução com Vitrine */}
+          {/* Coluna 1: Capa Oficial em Alta Resolução */}
           <div>
             <div
               style={{
@@ -236,7 +238,7 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
             >
               {!imgError ? (
                 <>
-                  {/* Fundo ampliado e desfocado da capa */}
+                  {/* Fundo ampliado e desfocado da capa oficial */}
                   <div
                     style={{
                       position: 'absolute',
@@ -312,42 +314,46 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                   pointerEvents: 'none'
                 }}
               >
-                <span
-                  style={{
-                    background: 'rgba(10, 39, 28, 0.85)',
-                    backdropFilter: 'blur(6px)',
-                    color: 'var(--color-orange-400)',
-                    fontSize: '0.7rem',
-                    fontWeight: 700,
-                    padding: '0.2rem 0.6rem',
-                    borderRadius: 'var(--radius-full)',
-                    border: '1px solid rgba(244, 162, 97, 0.3)'
-                  }}
-                >
-                  {ebook.category === 'financas' ? t.searchPage.financeCategory : t.searchPage.languagesCategory}
-                </span>
+                {ebook.categoryLabel && (
+                  <span
+                    style={{
+                      background: 'rgba(10, 39, 28, 0.85)',
+                      backdropFilter: 'blur(6px)',
+                      color: 'var(--color-orange-400)',
+                      fontSize: '0.7rem',
+                      fontWeight: 700,
+                      padding: '0.2rem 0.6rem',
+                      borderRadius: 'var(--radius-full)',
+                      border: '1px solid rgba(244, 162, 97, 0.3)'
+                    }}
+                  >
+                    {ebook.categoryLabel}
+                  </span>
+                )}
 
-                <span
-                  style={{
-                    color: '#ffffff',
-                    fontSize: '0.7rem',
-                    fontWeight: 700,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.25rem',
-                    background: 'rgba(0, 0, 0, 0.7)',
-                    backdropFilter: 'blur(6px)',
-                    padding: '0.2rem 0.55rem',
-                    borderRadius: 'var(--radius-sm)'
-                  }}
-                >
-                  <FileText size={11} />
-                  PDF
-                </span>
+                {ebook.format && (
+                  <span
+                    style={{
+                      color: '#ffffff',
+                      fontSize: '0.7rem',
+                      fontWeight: 700,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.25rem',
+                      background: 'rgba(0, 0, 0, 0.7)',
+                      backdropFilter: 'blur(6px)',
+                      padding: '0.2rem 0.55rem',
+                      borderRadius: 'var(--radius-sm)'
+                    }}
+                  >
+                    <FileText size={11} />
+                    {ebook.format}
+                  </span>
+                )}
               </div>
             </div>
 
-            {/* Ficha Técnica Rápida */}
+            {/* Ficha Técnica (exclusivamente com metadados reais cadastrados) */}
             <div
               style={{
                 marginTop: '1.2rem',
@@ -360,19 +366,23 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                 gap: '0.6rem'
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
-                <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <FileText size={13} /> {t.ebooksSection.formatLabel}
-                </span>
-                <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>PDF Digital</span>
-              </div>
+              {ebook.format && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <FileText size={13} /> {t.ebooksSection.formatLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.format}</span>
+                </div>
+              )}
 
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
-                <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <BookOpen size={13} /> {t.ebooksSection.pagesLabel}
-                </span>
-                <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.pages || 140} {t.ebooksSection.pagesLabel}</span>
-              </div>
+              {typeof ebook.pages === 'number' && ebook.pages > 0 && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <BookOpen size={13} /> {t.ebooksSection.pagesLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.pages} {t.ebooksSection.pagesLabel}</span>
+                </div>
+              )}
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
                 <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
@@ -381,16 +391,27 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                 <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{getLanguageLabel()}</span>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
-                <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                  <Calendar size={13} /> Edição
-                </span>
-                <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>2026 (Oficial)</span>
-              </div>
+              {ebook.categoryLabel && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Layers size={13} /> {t.ebooksSection.categoryLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.categoryLabel}</span>
+                </div>
+              )}
+
+              {ebook.releaseDate && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Calendar size={13} /> Data de Lançamento
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.releaseDate}</span>
+                </div>
+              )}
             </div>
           </div>
 
-          {/* Coluna 2: Informações Editoriais Completas e Ações */}
+          {/* Coluna 2: Informações Editoriais e Checkout Hotmart */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div>
               {/* Coleção Pertencente */}
@@ -428,93 +449,51 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
               </h2>
 
               {/* Subtítulo */}
-              <p
-                style={{
-                  fontSize: '0.98rem',
-                  fontWeight: 600,
-                  color: 'var(--color-orange-500)',
-                  marginBottom: '1.2rem',
-                  lineHeight: 1.45
-                }}
-              >
-                {ebook.subtitle}
-              </p>
-
-              {/* Sinopse / Visão Geral */}
-              <div style={{ marginBottom: '1.5rem' }}>
-                <h4
-                  style={{
-                    fontSize: '0.88rem',
-                    fontWeight: 700,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    color: 'var(--text-muted)',
-                    marginBottom: '0.6rem',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.35rem'
-                  }}
-                >
-                  <BookOpen size={14} color="var(--color-gold-500)" />
-                  {t.ebooksSection.synopsis}
-                </h4>
+              {ebook.subtitle && (
                 <p
                   style={{
-                    fontSize: '0.95rem',
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.7,
-                    margin: 0
+                    fontSize: '0.98rem',
+                    fontWeight: 600,
+                    color: 'var(--color-orange-500)',
+                    marginBottom: '1.2rem',
+                    lineHeight: 1.45
                   }}
                 >
-                  {ebook.description}
+                  {ebook.subtitle}
                 </p>
-              </div>
+              )}
 
-              {/* Garantias / Diferenciais do E-book */}
-              <div
-                style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                  gap: '0.6rem',
-                  marginBottom: '1.5rem'
-                }}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.45rem',
-                    fontSize: '0.82rem',
-                    color: 'var(--text-primary)',
-                    fontWeight: 600,
-                    background: 'var(--bg-secondary)',
-                    padding: '0.55rem 0.75rem',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--border-subtle)'
-                  }}
-                >
-                  <CheckCircle2 size={15} color="#25D366" />
-                  <span>Acesso Imediato em PDF</span>
+              {/* Sinopse / Visão Geral */}
+              {ebook.description && (
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h4
+                    style={{
+                      fontSize: '0.88rem',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      color: 'var(--text-muted)',
+                      marginBottom: '0.6rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.35rem'
+                    }}
+                  >
+                    <BookOpen size={14} color="var(--color-gold-500)" />
+                    {t.ebooksSection.synopsis}
+                  </h4>
+                  <p
+                    style={{
+                      fontSize: '0.95rem',
+                      color: 'var(--text-secondary)',
+                      lineHeight: 1.7,
+                      margin: 0
+                    }}
+                  >
+                    {ebook.description}
+                  </p>
                 </div>
-
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.45rem',
-                    fontSize: '0.82rem',
-                    color: 'var(--text-primary)',
-                    fontWeight: 600,
-                    background: 'var(--bg-secondary)',
-                    padding: '0.55rem 0.75rem',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--border-subtle)'
-                  }}
-                >
-                  <ShieldCheck size={15} color="#25D366" />
-                  <span>Compra Segura &amp; Protegida</span>
-                </div>
-              </div>
+              )}
 
               {/* Palavras-chave / Hashtags Interativas */}
               {ebook.keywords && ebook.keywords.length > 0 && (
@@ -566,7 +545,7 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
               )}
             </div>
 
-            {/* Ações / Botões de Conversão */}
+            {/* Ações e Checkout */}
             <div
               style={{
                 borderTop: '1px solid var(--border-subtle)',
@@ -577,34 +556,46 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
               }}
             >
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
-                {/* CTA Principal: Compra Hotmart / WhatsApp */}
+                {/* 1. Botão Principal: Abre ESTRITAMENTE o checkout Hotmart específico em nova aba */}
                 {ebook.hotmartCheckoutUrl ? (
                   <a
                     href={ebook.hotmartCheckoutUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary"
-                    style={{ flex: 1, minWidth: '200px', justifyContent: 'center' }}
+                    style={{ flex: 1, minWidth: '220px', justifyContent: 'center' }}
                   >
                     <Sparkles size={16} />
                     <span>{t.ebooksSection.buyNow}</span>
                     <ArrowRight size={15} />
                   </a>
                 ) : (
-                  <a
-                    href={whatsAppInquiryUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                    style={{ flex: 1, minWidth: '200px', justifyContent: 'center' }}
+                  /* Se não houver checkout cadastrado, NUNCA abre WhatsApp: exibe estado informativo */
+                  <div
+                    style={{
+                      flex: 1,
+                      minWidth: '220px',
+                      padding: '0.8rem 1.2rem',
+                      borderRadius: 'var(--radius-md)',
+                      background: 'var(--bg-secondary)',
+                      border: '1px solid var(--border-medium)',
+                      color: 'var(--text-muted)',
+                      fontSize: '0.88rem',
+                      fontWeight: 600,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.5rem',
+                      cursor: 'not-allowed',
+                      textAlign: 'center'
+                    }}
                   >
-                    <WhatsAppIcon size={17} color="#ffffff" />
-                    <span>{t.ebooksSection.buyNow}</span>
-                    <ArrowRight size={15} />
-                  </a>
+                    <Lock size={15} />
+                    <span>{t.ebooksSection.checkoutUnavailable}</span>
+                  </div>
                 )}
 
-                {/* CTA Secundário: Ver Coleção Completa */}
+                {/* 2. Botão Secundário: Ver Coleção Completa */}
                 {ebook.collectionId && (
                   <button
                     type="button"
@@ -621,29 +612,30 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                 )}
               </div>
 
-              {/* Botão de Dúvidas / Suporte Rápido */}
-              <div style={{ textAlign: 'center' }}>
+              {/* 3. Atendimento WhatsApp: EXCLUSIVAMENTE no CTA de tirar dúvidas */}
+              <div style={{ textAlign: 'center', marginTop: '0.2rem' }}>
                 <a
                   href={whatsAppInquiryUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    fontSize: '0.82rem',
-                    color: 'var(--text-muted)',
+                    fontSize: '0.85rem',
+                    color: 'var(--text-secondary)',
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '0.4rem',
+                    gap: '0.45rem',
                     textDecoration: 'none',
+                    fontWeight: 500,
                     transition: 'color var(--transition-fast)'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.color = 'var(--color-orange-500)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = 'var(--text-muted)';
+                    e.currentTarget.style.color = 'var(--text-secondary)';
                   }}
                 >
-                  <WhatsAppIcon size={14} color="var(--color-green-500)" />
+                  <WhatsAppIcon size={15} color="var(--color-green-500)" />
                   <span>{t.ebooksSection.talkWhatsapp}</span>
                 </a>
               </div>
