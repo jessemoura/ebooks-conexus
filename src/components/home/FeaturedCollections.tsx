@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { getCollections } from '../../data/collections';
+import { getBundleByCollectionId } from '../../data/bundles';
 import { useApp } from '../../context/AppContext';
 import { ArrowRight, BookOpen, Sparkles } from 'lucide-react';
 
@@ -47,6 +48,7 @@ export const FeaturedCollections: React.FC = () => {
           gap: '2.4rem'
         }}>
           {collections.map((col) => {
+            const bundle = getBundleByCollectionId(col.id, language);
             const visual = collectionVisuals[col.id] || {
               bgGradient: 'linear-gradient(135deg, #0e3526 0%, #134633 100%)',
               badgeColor: '#e76f51',
@@ -197,22 +199,46 @@ export const FeaturedCollections: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Botão de Ação */}
-                <div style={{ padding: '0 1.6rem 1.6rem 1.6rem' }}>
+                {/* Botões de Ação: Compra e Navegação */}
+                <div style={{
+                  padding: '0 1.6rem 1.6rem 1.6rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.65rem'
+                }}>
+                  {/* CTA Comercial Principal: Checkout Hotmart */}
+                  {bundle?.hotmartCheckoutUrl && (
+                    <a
+                      href={bundle.hotmartCheckoutUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-primary"
+                      style={{
+                        width: '100%',
+                        justifyContent: 'center',
+                        gap: '0.5rem',
+                        fontWeight: 700
+                      }}
+                    >
+                      <Sparkles size={16} />
+                      <span>{t.collectionsSection.buyCollection}</span>
+                      <ArrowRight size={15} />
+                    </a>
+                  )}
+
+                  {/* CTA de Navegação Editorial: Ver Coleção e Volumes */}
                   <Link
-                    to="/colecoes"
+                    to={`/colecoes#${col.slug}`}
                     className="btn btn-outline"
                     style={{
                       width: '100%',
-                      justifyContent: 'space-between',
-                      borderColor: 'var(--border-green)'
+                      justifyContent: 'center',
+                      borderColor: 'var(--border-green)',
+                      gap: '0.5rem'
                     }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <BookOpen size={16} color="var(--color-green-600)" />
-                      <span>{t.collectionsSection.viewCollection}</span>
-                    </div>
-                    <ArrowRight size={16} />
+                    <BookOpen size={16} color="var(--color-green-600)" />
+                    <span>{t.collectionsSection.viewCollection}</span>
                   </Link>
                 </div>
               </div>

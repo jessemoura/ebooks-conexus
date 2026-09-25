@@ -260,16 +260,34 @@ export const BundleCard: React.FC<BundleCardProps> = ({ bundle }) => {
         </div>
       </div>
 
-      {/* Action CTA */}
-      <div style={{ padding: '0 1.4rem 1.4rem 1.4rem' }}>
+      {/* Action CTAs: Compra Direta e Navegação Editorial */}
+      <div style={{
+        padding: '0 1.4rem 1.4rem 1.4rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.65rem'
+      }}>
+        {bundle.hotmartCheckoutUrl && (
+          <a
+            href={bundle.hotmartCheckoutUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+            style={{ width: '100%', justifyContent: 'center', gap: '0.5rem', fontWeight: 700 }}
+          >
+            <Sparkles size={16} />
+            <span>{t.collectionsSection.buyCollection}</span>
+            <ArrowRight size={15} />
+          </a>
+        )}
+
         <Link
           to={`/colecoes#${bundle.collectionId}`}
-          className="btn btn-primary"
-          style={{ width: '100%', justifyContent: 'center' }}
+          className="btn btn-outline"
+          style={{ width: '100%', justifyContent: 'center', gap: '0.5rem', borderColor: 'var(--border-green)' }}
         >
-          <Layers size={16} />
+          <Layers size={16} color="var(--color-green-600)" />
           <span>{t.collectionsSection.viewCollection}</span>
-          <ArrowRight size={15} />
         </Link>
       </div>
     </div>
