@@ -31,8 +31,11 @@ export const BundleCard: React.FC<BundleCardProps> = ({ bundle }) => {
     >
       <div>
         {/* Container da Capa do Bundle: vertical, padrão catálogo/livraria, exibe 100% da imagem oficial com object-fit contain */}
-        <div
+        <Link
+          to={`/colecoes#${bundle.collectionId}`}
+          aria-label={`${bundle.title} — ${t.collectionsSection.viewCollection}`}
           style={{
+            display: 'block',
             margin: '1.2rem 1.2rem 0 1.2rem',
             height: '340px',
             position: 'relative',
@@ -40,10 +43,8 @@ export const BundleCard: React.FC<BundleCardProps> = ({ bundle }) => {
             overflow: 'hidden',
             background: 'linear-gradient(180deg, rgba(20, 26, 31, 0.95) 0%, rgba(12, 16, 20, 0.98) 100%)',
             border: '1px solid var(--border-subtle)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '0.5rem'
+            padding: '0.5rem',
+            textDecoration: 'none'
           }}
         >
           {!imgError ? (
@@ -188,7 +189,7 @@ export const BundleCard: React.FC<BundleCardProps> = ({ bundle }) => {
               <span>{bundle.volumesCount} {t.collectionsSection.volumes}</span>
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Content Body */}
         <div style={{ padding: '1.4rem 1.4rem 1rem 1.4rem' }}>
@@ -211,7 +212,14 @@ export const BundleCard: React.FC<BundleCardProps> = ({ bundle }) => {
             color: 'var(--text-primary)',
             marginBottom: '0.5rem'
           }}>
-            {bundle.title}
+            <Link 
+              to={`/colecoes#${bundle.collectionId}`}
+              style={{ color: 'inherit', textDecoration: 'none' }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--color-orange-500)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'inherit'; }}
+            >
+              {bundle.title}
+            </Link>
           </h3>
 
           <p style={{

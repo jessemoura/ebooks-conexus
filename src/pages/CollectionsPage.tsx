@@ -1,4 +1,5 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { getCollections } from '../data/collections';
 import { getEbooks } from '../data/ebooks';
 import { getBundleByCollectionId } from '../data/bundles';
@@ -9,8 +10,24 @@ import { Layers, Sparkles, BookOpen, CheckCircle2, FileText } from 'lucide-react
 
 export const CollectionsPage: React.FC = () => {
   const { t, language } = useApp();
+  const location = useLocation();
   const collections = useMemo(() => getCollections(language), [language]);
   const ebooks = useMemo(() => getEbooks(language), [language]);
+
+  // Smooth scroll to collection if hash is present
+  useEffect(() => {
+    if (location.hash) {
+      const targetId = location.hash.replace('#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        setTimeout(() => {
+          const yOffset = -90;
+          const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 120);
+      }
+    }
+  }, [location.hash, collections]);
 
   return (
     <>

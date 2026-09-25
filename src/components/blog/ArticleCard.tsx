@@ -15,7 +15,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ post }) => {
     <article className="blog-card">
       <div>
         {/* Imagem de Capa Padrão CONEXUS 16:9 */}
-        <div className="blog-card-media">
+        <Link to={`/blog/${post.slug}`} className="blog-card-media" aria-label={post.title} style={{ display: 'block', textDecoration: 'none' }}>
           <img
             src={post.featuredImage}
             alt={post.title}
@@ -25,7 +25,7 @@ export const ArticleCard: React.FC<ArticleCardProps> = ({ post }) => {
           <span className="blog-card-category">
             {post.category}
           </span>
-        </div>
+        </Link>
 
         {/* Informações Editoriais do Artigo */}
         <div className="blog-card-body">

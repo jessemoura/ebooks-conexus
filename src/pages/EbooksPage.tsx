@@ -5,6 +5,7 @@ import { getCollections } from '../data/collections';
 import { getBundles } from '../data/bundles';
 import { EbookCard } from '../components/ebooks/EbookCard';
 import { BundleCard } from '../components/ebooks/BundleCard';
+import { EbookDetailModal } from '../components/ebooks/EbookDetailModal';
 import { SEO } from '../components/common/SEO';
 import { useApp } from '../context/AppContext';
 import { 
@@ -23,25 +24,39 @@ export const EbooksPage: React.FC = () => {
   const [searchParams] = useSearchParams();
 
   // Estados de busca e filtros
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState<string>(() => {
+    return searchParams.get('q') || searchParams.get('tag') || searchParams.get('busca') || '';
+  });
   const [selectedOfferType, setSelectedOfferType] = useState<'all' | 'bundles' | 'singles'>('all');
   const [selectedCollection, setSelectedCollection] = useState<string>(() => {
     const colParam = searchParams.get('collection') || searchParams.get('colecao');
     return colParam || 'all';
   });
   const [sortBy, setSortBy] = useState<'newest' | 'az' | 'za'>('newest');
+  const [urlSelectedEbook, setUrlSelectedEbook] = useState<any>(null);
 
-  // Atualiza filtro caso o parâmetro de URL mude
+  const ebooks = useMemo(() => getEbooks(language), [language]);
+  const collections = useMemo(() => getCollections(language), [language]);
+  const bundles = useMemo(() => getBundles(language), [language]);
+
+  // Atualiza filtros e modal caso o parâmetro de URL mude
   useEffect(() => {
     const colParam = searchParams.get('collection') || searchParams.get('colecao');
     if (colParam) {
       setSelectedCollection(colParam);
     }
-  }, [searchParams]);
-
-  const ebooks = useMemo(() => getEbooks(language), [language]);
-  const collections = useMemo(() => getCollections(language), [language]);
-  const bundles = useMemo(() => getBundles(language), [language]);
+    const qParam = searchParams.get('q') || searchParams.get('tag') || searchParams.get('busca');
+    if (qParam !== null) {
+      setSearchQuery(qParam);
+    }
+    const ebookSlug = searchParams.get('ebook') || searchParams.get('detalhes');
+    if (ebookSlug) {
+      const found = ebooks.find(e => e.slug === ebookSlug || e.id === ebookSlug);
+      if (found) {
+        setUrlSelectedEbook(found);
+      }
+    }
+  }, [searchParams, ebooks]);
 
   // Filtro de Coleções Completas (Bundles)
   const filteredBundles = useMemo(() => {
@@ -504,6 +519,15 @@ export const EbooksPage: React.FC = () => {
           )}
         </div>
       </main>
+
+      {/* Modal aberto por link direto/URL deep link */}
+      {urlSelectedEbook && (
+        <EbookDetailModal
+          ebook={urlSelectedEbook}
+          isOpen={!!urlSelectedEbook}
+          onClose={() => setUrlSelectedEbook(null)}
+        />
+      )}
     </>
   );
 };
