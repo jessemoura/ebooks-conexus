@@ -20,6 +20,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/financas-do-zero.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/I107705809M',
       releaseDate: '2026-01-10'
     },
     {
@@ -37,6 +38,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/orcamento-e-organizacao.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/M107706293I',
       releaseDate: '2026-01-20'
     },
     {
@@ -54,6 +56,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/dividas-e-reserva.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/F107706443Q',
       releaseDate: '2026-02-01'
     },
     {
@@ -71,6 +74,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/primeiros-investimentos.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107706605Y',
       releaseDate: '2026-02-15'
     },
     {
@@ -88,6 +92,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/renda-fixa.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/L107706850K',
       releaseDate: '2026-03-01'
     },
     {
@@ -105,6 +110,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/fundos-e-imobiliario.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107706959O',
       releaseDate: '2026-03-15'
     },
     {
@@ -122,6 +128,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/acoes-crescimento-oportunidades.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107707068N',
       releaseDate: '2026-04-01'
     },
     {
@@ -139,6 +146,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/investimentos-internacionais.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/E107707156E',
       releaseDate: '2026-04-15'
     },
     {
@@ -156,6 +164,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/construcao-de-patrimonio.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/G107708119W',
       releaseDate: '2026-05-01'
     },
     {
@@ -173,6 +182,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/independencia-financeira.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107708440R',
       releaseDate: '2026-05-15'
     },
 
@@ -194,6 +204,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL01_CAPA_OFICIAL.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107713865E',
       releaseDate: '2026-02-05'
     },
     {
@@ -211,6 +222,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107713915A',
       releaseDate: '2026-02-20'
     },
     {
@@ -228,6 +240,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/M107713995L',
       releaseDate: '2026-03-05'
     },
     {
@@ -245,6 +258,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/U107714071P',
       releaseDate: '2026-03-20'
     },
     {
@@ -262,6 +276,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/L107714118E',
       releaseDate: '2026-04-05'
     },
     {
@@ -279,6 +294,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107714169I',
       releaseDate: '2026-04-20'
     },
 
@@ -300,6 +316,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL01_PRIMEROS_PASOS_CAPA.jpg',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/E107718727Q',
       releaseDate: '2026-02-10'
     },
     {
@@ -317,6 +334,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL02_CONVERSACION_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/J107718763P',
       releaseDate: '2026-02-25'
     },
     {
@@ -334,6 +352,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL03_GRAMATICA_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/N107718801Y',
       releaseDate: '2026-03-10'
     },
     {
@@ -351,6 +370,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL04_VIAJE_CAPA.jpg',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/A107718853D',
       releaseDate: '2026-03-25'
     },
     {
@@ -368,6 +388,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL05_TRABAJO_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107718893P',
       releaseDate: '2026-04-10'
     },
     {
@@ -385,6 +406,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL06_DIA_A_DIA_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/R107718922I',
       releaseDate: '2026-04-25'
     }
   ],
@@ -408,6 +430,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/financas-do-zero.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/I107705809M',
       releaseDate: '2026-01-10'
     },
     {
@@ -425,6 +448,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/orcamento-e-organizacao.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/M107706293I',
       releaseDate: '2026-01-20'
     },
     {
@@ -442,6 +466,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/dividas-e-reserva.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/F107706443Q',
       releaseDate: '2026-02-01'
     },
     {
@@ -459,6 +484,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/primeiros-investimentos.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107706605Y',
       releaseDate: '2026-02-15'
     },
     {
@@ -476,6 +502,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/renda-fixa.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/L107706850K',
       releaseDate: '2026-03-01'
     },
     {
@@ -493,6 +520,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/fundos-e-imobiliario.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107706959O',
       releaseDate: '2026-03-15'
     },
     {
@@ -510,6 +538,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/acoes-crescimento-oportunidades.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107707068N',
       releaseDate: '2026-04-01'
     },
     {
@@ -527,6 +556,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/investimentos-internacionais.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/E107707156E',
       releaseDate: '2026-04-15'
     },
     {
@@ -544,6 +574,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/construcao-de-patrimonio.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/G107708119W',
       releaseDate: '2026-05-01'
     },
     {
@@ -561,6 +592,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/independencia-financeira.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107708440R',
       releaseDate: '2026-05-15'
     },
 
@@ -582,6 +614,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL01_CAPA_OFICIAL.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107713865E',
       releaseDate: '2026-02-05'
     },
     {
@@ -599,6 +632,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107713915A',
       releaseDate: '2026-02-20'
     },
     {
@@ -616,6 +650,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/M107713995L',
       releaseDate: '2026-03-05'
     },
     {
@@ -633,6 +668,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/U107714071P',
       releaseDate: '2026-03-20'
     },
     {
@@ -650,6 +686,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/L107714118E',
       releaseDate: '2026-04-05'
     },
     {
@@ -667,6 +704,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107714169I',
       releaseDate: '2026-04-20'
     },
 
@@ -688,6 +726,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL01_PRIMEROS_PASOS_CAPA.jpg',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/E107718727Q',
       releaseDate: '2026-02-10'
     },
     {
@@ -705,6 +744,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL02_CONVERSACION_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/J107718763P',
       releaseDate: '2026-02-25'
     },
     {
@@ -722,6 +762,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL03_GRAMATICA_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/N107718801Y',
       releaseDate: '2026-03-10'
     },
     {
@@ -739,6 +780,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL04_VIAJE_CAPA.jpg',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/A107718853D',
       releaseDate: '2026-03-25'
     },
     {
@@ -756,6 +798,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL05_TRABAJO_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107718893P',
       releaseDate: '2026-04-10'
     },
     {
@@ -773,6 +816,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL06_DIA_A_DIA_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/R107718922I',
       releaseDate: '2026-04-25'
     }
   ],
@@ -796,6 +840,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/financas-do-zero.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/I107705809M',
       releaseDate: '2026-01-10'
     },
     {
@@ -813,6 +858,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/orcamento-e-organizacao.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/M107706293I',
       releaseDate: '2026-01-20'
     },
     {
@@ -830,6 +876,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/dividas-e-reserva.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/F107706443Q',
       releaseDate: '2026-02-01'
     },
     {
@@ -847,6 +894,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/primeiros-investimentos.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107706605Y',
       releaseDate: '2026-02-15'
     },
     {
@@ -864,6 +912,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/renda-fixa.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/L107706850K',
       releaseDate: '2026-03-01'
     },
     {
@@ -881,6 +930,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/fundos-e-imobiliario.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107706959O',
       releaseDate: '2026-03-15'
     },
     {
@@ -898,6 +948,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/acoes-crescimento-oportunidades.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107707068N',
       releaseDate: '2026-04-01'
     },
     {
@@ -915,6 +966,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/investimentos-internacionais.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/E107707156E',
       releaseDate: '2026-04-15'
     },
     {
@@ -932,6 +984,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/construcao-de-patrimonio.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/G107708119W',
       releaseDate: '2026-05-01'
     },
     {
@@ -949,6 +1002,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/independencia-financeira.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107708440R',
       releaseDate: '2026-05-15'
     },
 
@@ -970,6 +1024,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL01_CAPA_OFICIAL.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107713865E',
       releaseDate: '2026-02-05'
     },
     {
@@ -987,6 +1042,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL02_CAPA_OFICIAL.png.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Y107713915A',
       releaseDate: '2026-02-20'
     },
     {
@@ -1004,6 +1060,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL03_CAPA_OFICIAL.png.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/M107713995L',
       releaseDate: '2026-03-05'
     },
     {
@@ -1021,6 +1078,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL04_CAPA_OFICIAL.png.png',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/U107714071P',
       releaseDate: '2026-03-20'
     },
     {
@@ -1038,6 +1096,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/L107714118E',
       releaseDate: '2026-04-05'
     },
     {
@@ -1055,6 +1114,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107714169I',
       releaseDate: '2026-04-20'
     },
 
@@ -1076,6 +1136,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL01_PRIMEROS_PASOS_CAPA.jpg',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/E107718727Q',
       releaseDate: '2026-02-10'
     },
     {
@@ -1093,6 +1154,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL02_CONVERSACION_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/J107718763P',
       releaseDate: '2026-02-25'
     },
     {
@@ -1110,6 +1172,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL03_GRAMATICA_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/N107718801Y',
       releaseDate: '2026-03-10'
     },
     {
@@ -1127,6 +1190,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL04_VIAJE_CAPA.jpg',
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/A107718853D',
       releaseDate: '2026-03-25'
     },
     {
@@ -1144,6 +1208,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL05_TRABAJO_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107718893P',
       releaseDate: '2026-04-10'
     },
     {
@@ -1161,6 +1226,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       format: 'PDF',
       coverImage: '/assets/ebooks/CONEXUS_EBOOKS_HABLANDO_ESPANOL_VOL06_DIA_A_DIA_CAPA.jpg',
       featured: false,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/R107718922I',
       releaseDate: '2026-04-25'
     }
   ]

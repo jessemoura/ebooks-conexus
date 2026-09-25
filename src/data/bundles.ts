@@ -27,6 +27,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'independencia-financeira'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107709004I',
       releaseDate: '2026-05-15'
     },
     {
@@ -50,6 +51,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'parlando-italiano-italiano-nel-quotidiano'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107714453N',
       releaseDate: '2026-04-20'
     },
     {
@@ -73,6 +75,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'hablando-espanol-dia-a-dia'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/X107718973I',
       releaseDate: '2026-04-25'
     }
   ],
@@ -103,6 +106,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'independencia-financeira'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107709004I',
       releaseDate: '2026-05-15'
     },
     {
@@ -126,6 +130,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'parlando-italiano-italiano-nel-quotidiano'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107714453N',
       releaseDate: '2026-04-20'
     },
     {
@@ -149,6 +154,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'hablando-espanol-dia-a-dia'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/X107718973I',
       releaseDate: '2026-04-25'
     }
   ],
@@ -179,6 +185,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'independencia-financeira'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/C107709004I',
       releaseDate: '2026-05-15'
     },
     {
@@ -202,6 +209,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'parlando-italiano-italiano-nel-quotidiano'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/K107714453N',
       releaseDate: '2026-04-20'
     },
     {
@@ -225,6 +233,7 @@ export const bundlesData: Record<Language, CollectionBundle[]> = {
         'hablando-espanol-dia-a-dia'
       ],
       featured: true,
+      hotmartCheckoutUrl: 'https://pay.hotmart.com/X107718973I',
       releaseDate: '2026-04-25'
     }
   ]

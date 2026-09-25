@@ -6,7 +6,7 @@ import { getBundleByCollectionId } from '../data/bundles';
 import { EbookCard } from '../components/ebooks/EbookCard';
 import { SEO } from '../components/common/SEO';
 import { useApp } from '../context/AppContext';
-import { Layers, Sparkles, BookOpen, CheckCircle2, FileText } from 'lucide-react';
+import { Layers, Sparkles, BookOpen, CheckCircle2, FileText, ArrowRight } from 'lucide-react';
 
 export const CollectionsPage: React.FC = () => {
   const { t, language } = useApp();
@@ -202,19 +202,48 @@ export const CollectionsPage: React.FC = () => {
                       </div>
 
                       <div style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        background: 'var(--bg-card)',
-                        border: '1px solid var(--border-green)',
-                        padding: '0.6rem 1.1rem',
-                        borderRadius: 'var(--radius-full)',
-                        fontSize: '0.85rem',
-                        fontWeight: 700,
-                        color: 'var(--color-green-700)'
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'flex-start',
+                        gap: '0.8rem'
                       }}>
-                        <CheckCircle2 size={16} color="#25D366" />
-                        <span>{t.bundlesSection.allVolumesIncluded.replace('{count}', String(bundle.volumesCount))}</span>
+                        <div style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.5rem',
+                          background: 'var(--bg-card)',
+                          border: '1px solid var(--border-green)',
+                          padding: '0.5rem 0.95rem',
+                          borderRadius: 'var(--radius-full)',
+                          fontSize: '0.82rem',
+                          fontWeight: 700,
+                          color: 'var(--color-green-700)'
+                        }}>
+                          <CheckCircle2 size={15} color="#25D366" />
+                          <span>{t.bundlesSection.allVolumesIncluded.replace('{count}', String(bundle.volumesCount))}</span>
+                        </div>
+
+                        {bundle.hotmartCheckoutUrl && (
+                          <a
+                            href={bundle.hotmartCheckoutUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-primary"
+                            style={{
+                              padding: '0.75rem 1.4rem',
+                              fontSize: '0.92rem',
+                              fontWeight: 700,
+                              boxShadow: 'var(--shadow-md)',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '0.5rem'
+                            }}
+                          >
+                            <Sparkles size={16} />
+                            <span>{t.collectionsSection.buyCollection}</span>
+                            <ArrowRight size={15} />
+                          </a>
+                        )}
                       </div>
                     </div>
                   )}

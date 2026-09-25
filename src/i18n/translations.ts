@@ -49,7 +49,8 @@ export const translations = {
       headerTitle: 'Coleções Oficiais',
       headerSubtitle: 'Projetadas para construir um conhecimento contínuo e progressivo, organizadas em volumes complementares de alto nível.',
       completeOfferBadge: 'Coleção Completa (100% dos Volumes)',
-      completeOfferDesc: 'Adquira a série integral e domine todo o conteúdo de ponta a ponta.'
+      completeOfferDesc: 'Adquira a série integral e domine todo o conteúdo de ponta a ponta.',
+      buyCollection: 'Comprar coleção completa'
     },
     bundlesSection: {
       badge: 'Ofertas Exclusivas',
@@ -318,7 +319,8 @@ export const translations = {
       headerTitle: 'Official Collections',
       headerSubtitle: 'Designed to build continuous and progressive knowledge, organized in high-level complementary volumes.',
       completeOfferBadge: 'Complete Collection (100% of Volumes)',
-      completeOfferDesc: 'Get the full editorial series and master the entire subject from start to finish.'
+      completeOfferDesc: 'Get the full editorial series and master the entire subject from start to finish.',
+      buyCollection: 'Buy complete collection'
     },
     bundlesSection: {
       badge: 'Exclusive Offers',
@@ -587,7 +589,8 @@ export const translations = {
       headerTitle: 'Colecciones Oficiales',
       headerSubtitle: 'Diseñadas para construir un conocimiento continuo y progresivo, organizadas en volúmenes complementarios de alto nivel.',
       completeOfferBadge: 'Colección Completa (100% de los Volúmenes)',
-      completeOfferDesc: 'Adquiera la serie integral y domine todo el contenido de principio a fin.'
+      completeOfferDesc: 'Adquiera la serie integral y domine todo el contenido de principio a fin.',
+      buyCollection: 'Comprar colección completa'
     },
     bundlesSection: {
       badge: 'Ofertas Exclusivas',
