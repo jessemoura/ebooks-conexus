@@ -1,8 +1,61 @@
+# ==============================================================================
+# CONEXUS E-BOOKS — Configuração Apache / LiteSpeed (Hostinger)
+# ==============================================================================
+
+# 1. Roteamento SPA (React / Vite Router)
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+
+  # Permite acesso direto a arquivos e diretórios existentes
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Redireciona todas as outras rotas para o index.html da SPA
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# 2. Tipos MIME para Formatos Modernos
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType image/svg+xml .svg .svgz
+  AddType application/javascript .js .mjs
+  AddType text/css .css
+  AddType application/json .json
+  AddType application/pdf .pdf
+</IfModule>
+
+# 3. Compressão Gzip / Deflate
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/json application/xml application/xhtml+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# 4. Cache dos Navegadores (Performance & Velocidade)
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # HTML principal: validação imediata para atualizações rápidas
+  ExpiresByType text/html "access plus 0 seconds"
+
+  # CSS e JavaScript com hash gerado pelo Vite: cache longo
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+
+  # Imagens, Ícones e PDFs
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType application/pdf "access plus 1 month"
+</IfModule>
+
+# 5. Cabeçalhos de Segurança Básicos
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
