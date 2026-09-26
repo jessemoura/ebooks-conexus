@@ -274,7 +274,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano negócios', 'corporativo', 'trabalho', 'reuniões', 'e-mails formais'],
       pages: 160,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png?v=2',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/L107714118E',
       releaseDate: '2026-04-05'
@@ -292,7 +292,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano cotidiano', 'cultura italiana', 'estilo de vida', 'costumes', 'imersão'],
       pages: 144,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png?v=2',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107714169I',
       releaseDate: '2026-04-20'
@@ -684,7 +684,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['business italian', 'corporate', 'workplace', 'meetings', 'formal correspondence'],
       pages: 160,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png?v=2',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/L107714118E',
       releaseDate: '2026-04-05'
@@ -702,7 +702,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['everyday italian', 'italian culture', 'lifestyle', 'customs', 'immersion'],
       pages: 144,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png?v=2',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107714169I',
       releaseDate: '2026-04-20'
@@ -1094,7 +1094,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano de negocios', 'corporativo', 'trabajo', 'reuniones', 'correos formales'],
       pages: 160,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL05_CAPA_OFICIAL.png?v=2',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/L107714118E',
       releaseDate: '2026-04-05'
@@ -1112,7 +1112,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
       keywords: ['italiano cotidiano', 'cultura italiana', 'estilo de vida', 'costumbres', 'inmersión'],
       pages: 144,
       format: 'PDF',
-      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png',
+      coverImage: '/assets/ebooks/CONEXUS_EBOOKS_ITALIANO_VOL06_CAPA_OFICIAL.png?v=2',
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/Q107714169I',
       releaseDate: '2026-04-20'
