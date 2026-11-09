@@ -23,23 +23,27 @@ export const bookChannels: Record<string, BookChannelConfig> = {
   'financas-do-zero': {
     language: 'pt',
     volume: 1,
-    availableFormats: ['pdf'],
+    availableFormats: ['pdf', 'kindle'],
     hotmartEnabled: true,
     amazonUrl: '',
     amazonUkUrl: '',
     kindleUrl: '',
+    kindleUkUrl: 'https://www.amazon.co.uk/dp/B0HMD7F65Y',
     asin: '',
+    kindleAsin: 'B0HMD7F65Y',
     isbn: ''
   },
   'orcamento-e-organizacao': {
     language: 'pt',
     volume: 2,
-    availableFormats: ['pdf'],
+    availableFormats: ['pdf', 'kindle'],
     hotmartEnabled: true,
     amazonUrl: '',
     amazonUkUrl: '',
     kindleUrl: '',
+    kindleUkUrl: 'https://www.amazon.co.uk/dp/B0HMBYZKP9',
     asin: '',
+    kindleAsin: 'B0HMBYZKP9',
     isbn: ''
   },
   'dividas-e-reserva': {
@@ -56,12 +60,14 @@ export const bookChannels: Record<string, BookChannelConfig> = {
   'primeiros-investimentos': {
     language: 'pt',
     volume: 4,
-    availableFormats: ['pdf'],
+    availableFormats: ['pdf', 'kindle'],
     hotmartEnabled: true,
     amazonUrl: '',
     amazonUkUrl: '',
     kindleUrl: '',
+    kindleUkUrl: 'https://www.amazon.co.uk/dp/B0HNHF5C1J',
     asin: '',
+    kindleAsin: 'B0HNHF5C1J',
     isbn: ''
   },
   'renda-fixa': {
