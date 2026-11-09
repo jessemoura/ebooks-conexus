@@ -49,12 +49,14 @@ export const bookChannels: Record<string, BookChannelConfig> = {
   'dividas-e-reserva': {
     language: 'pt',
     volume: 3,
-    availableFormats: ['pdf'],
+    availableFormats: ['pdf', 'kindle'],
     hotmartEnabled: true,
     amazonUrl: '',
     amazonUkUrl: '',
     kindleUrl: '',
+    kindleUkUrl: 'https://www.amazon.co.uk/dp/B0H6JW92YL',
     asin: '',
+    kindleAsin: 'B0H6JW92YL',
     isbn: ''
   },
   'primeiros-investimentos': {
