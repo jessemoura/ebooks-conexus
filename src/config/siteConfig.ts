@@ -18,9 +18,9 @@ export const siteConfig = {
   
   // WhatsApp Oficial Centralizado (Header CTA + Botão Flutuante + Página de Contato + CTAs)
   whatsapp: {
-    number: '447341462757',
-    displayNumber: '+44 7341 462757',
-    baseUrl: 'https://wa.me/447341462757',
+    number: '5541991569590',
+    displayNumber: '+55 41 99156-9590',
+    baseUrl: 'https://wa.me/5541991569590',
     defaultMessage: 'Olá! Gostaria de mais informações sobre os e-books e coleções da CONEXUS.',
     get directUrl() {
       return `https://wa.me/${this.number}?text=${encodeURIComponent(this.defaultMessage)}`;
