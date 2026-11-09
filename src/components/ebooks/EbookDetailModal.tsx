@@ -1,20 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Ebook } from '../../types';
+import { BookFormat, Ebook } from '../../types';
 import { useApp } from '../../context/AppContext';
 import { siteConfig } from '../../config/siteConfig';
+import {
+  getAvailableFormats,
+  getBookChannels,
+  getBookLanguageLabel,
+  getFormatBadgeLabel
+} from '../../utils/bookFormats';
 import { WhatsAppIcon } from '../common/WhatsAppIcon';
 import { 
   X, 
   BookOpen, 
   FileText, 
+  Tablet,
   Layers, 
   Sparkles, 
   ArrowRight, 
+  ExternalLink,
   Tag, 
   Calendar, 
   Globe, 
   Lock,
+  Hash,
+  Package,
   Image as ImageIcon
 } from 'lucide-react';
 
@@ -62,17 +72,30 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
   if (!isOpen || !ebook) return null;
 
   // Capa oficial cadastrada no catálogo
-  const coverUrl = ebook.coverImage || `/assets/ebooks/${ebook.slug}.jpg`;
+  const coverUrl =
+    ebook.coverImage !== undefined
+      ? ebook.coverImage
+      : `/assets/ebooks/${ebook.slug}.jpg`;
+
+  const channels = getBookChannels(ebook);
+  const availableFormats = getAvailableFormats(ebook);
 
   // Mensagem contextual para o canal de atendimento WhatsApp (exclusivo para tirar dúvidas)
   const getWhatsAppMessage = () => {
+    const isDigitalOnly = availableFormats.length === 1 && availableFormats[0] === 'pdf';
     if (language === 'en') {
-      return `Hello! I have a question regarding the e-book: "${ebook.title}".`;
+      return isDigitalOnly
+        ? `Hello! I have a question regarding the e-book: "${ebook.title}".`
+        : `Hello! I have a question regarding the book: "${ebook.title}".`;
     }
     if (language === 'es') {
-      return `¡Hola! Tengo una consulta sobre el e-book: "${ebook.title}".`;
+      return isDigitalOnly
+        ? `¡Hola! Tengo una consulta sobre el e-book: "${ebook.title}".`
+        : `¡Hola! Tengo una consulta sobre el libro: "${ebook.title}".`;
     }
-    return `Olá! Gostaria de tirar dúvidas sobre o e-book: "${ebook.title}".`;
+    return isDigitalOnly
+      ? `Olá! Gostaria de tirar dúvidas sobre o e-book: "${ebook.title}".`
+      : `Olá! Gostaria de tirar dúvidas sobre a obra: "${ebook.title}".`;
   };
 
   const whatsAppInquiryUrl = `https://wa.me/${siteConfig.whatsapp.number}?text=${encodeURIComponent(getWhatsAppMessage())}`;
@@ -84,12 +107,16 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Nome do idioma baseado no idioma ativo da aplicação
-  const getLanguageLabel = () => {
-    if (language === 'en') return 'English';
-    if (language === 'es') return 'Español';
-    return 'Português';
+  const getFormatFullLabel = (format: BookFormat) => {
+    if (format === 'pdf') return t.ebooksSection.formatDigitalPdf;
+    if (format === 'paperback') return t.ebooksSection.formatPrintedPaperback;
+    return t.ebooksSection.formatKindle;
   };
+
+  const formatsSummaryText = availableFormats.map(getFormatFullLabel).join(' • ');
+  const displayLanguage = getBookLanguageLabel(ebook.language, language);
+  const displayIsbn = channels.paperback.isbn || ebook.isbn?.trim() || undefined;
+  const displayAsin = channels.paperback.asin || channels.kindle.asin || ebook.asin?.trim() || undefined;
 
   return (
     <div
@@ -162,6 +189,40 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
             background: rgba(231, 111, 81, 0.15) !important;
             color: var(--color-orange-500) !important;
             transform: translateY(-1px);
+          }
+          .format-option-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.95rem 1.05rem;
+            border-radius: var(--radius-md);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+          }
+          .format-option-card:hover {
+            border-color: var(--border-gold);
+            box-shadow: var(--shadow-sm);
+          }
+          .format-option-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            flex-shrink: 0;
+          }
+          @media (max-width: 560px) {
+            .format-option-card {
+              flex-direction: column;
+              align-items: stretch;
+            }
+            .format-option-actions {
+              width: 100%;
+            }
+            .format-option-actions a {
+              flex: 1;
+              justify-content: center;
+            }
           }
         `}</style>
 
@@ -237,7 +298,7 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                 boxShadow: 'var(--shadow-md)'
               }}
             >
-              {!imgError ? (
+              {coverUrl && !imgError ? (
                 <>
                   {/* Fundo ampliado e desfocado da capa oficial */}
                   <div
@@ -310,7 +371,8 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                   right: '0.8rem',
                   display: 'flex',
                   justifyContent: 'space-between',
-                  alignItems: 'center',
+                  alignItems: 'flex-start',
+                  gap: '0.4rem',
                   zIndex: 3,
                   pointerEvents: 'none'
                 }}
@@ -325,31 +387,38 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                       fontWeight: 700,
                       padding: '0.2rem 0.6rem',
                       borderRadius: 'var(--radius-full)',
-                      border: '1px solid rgba(244, 162, 97, 0.3)'
+                      border: '1px solid rgba(244, 162, 97, 0.3)',
+                      whiteSpace: 'nowrap'
                     }}
                   >
                     {ebook.categoryLabel}
                   </span>
                 )}
 
-                {ebook.format && (
-                  <span
-                    style={{
-                      color: '#ffffff',
-                      fontSize: '0.7rem',
-                      fontWeight: 700,
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.25rem',
-                      background: 'rgba(0, 0, 0, 0.7)',
-                      backdropFilter: 'blur(6px)',
-                      padding: '0.2rem 0.55rem',
-                      borderRadius: 'var(--radius-sm)'
-                    }}
-                  >
-                    <FileText size={11} />
-                    {ebook.format}
-                  </span>
+                {availableFormats.length > 0 && (
+                  <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: '0.3rem' }}>
+                    {availableFormats.map((fmt) => (
+                      <span
+                        key={fmt}
+                        style={{
+                          color: fmt === 'paperback' ? 'var(--color-gold-300)' : fmt === 'kindle' ? 'var(--color-orange-400)' : '#ffffff',
+                          fontSize: '0.7rem',
+                          fontWeight: 700,
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.25rem',
+                          background: fmt === 'paperback' ? 'rgba(10, 39, 28, 0.82)' : 'rgba(0, 0, 0, 0.7)',
+                          backdropFilter: 'blur(6px)',
+                          padding: '0.2rem 0.55rem',
+                          borderRadius: 'var(--radius-sm)',
+                          border: fmt === 'paperback' ? '1px solid rgba(212, 175, 55, 0.4)' : 'none'
+                        }}
+                      >
+                        {fmt === 'paperback' ? <BookOpen size={11} /> : fmt === 'kindle' ? <Tablet size={11} /> : <FileText size={11} />}
+                        {getFormatBadgeLabel(fmt)}
+                      </span>
+                    ))}
+                  </div>
                 )}
               </div>
             </div>
@@ -367,12 +436,14 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                 gap: '0.6rem'
               }}
             >
-              {ebook.format && (
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
-                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <FileText size={13} /> {t.ebooksSection.formatLabel}
+              {(formatsSummaryText || ebook.format) && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem', flexShrink: 0 }}>
+                    <FileText size={13} /> {availableFormats.length > 1 ? t.ebooksSection.formatsLabel : t.ebooksSection.formatLabel}
                   </span>
-                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.format}</span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)', textAlign: 'right' }}>
+                    {formatsSummaryText || ebook.format}
+                  </span>
                 </div>
               )}
 
@@ -389,7 +460,7 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                 <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
                   <Globe size={13} /> {t.ebooksSection.languageLabel}
                 </span>
-                <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{getLanguageLabel()}</span>
+                <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{displayLanguage}</span>
               </div>
 
               {ebook.categoryLabel && (
@@ -401,10 +472,37 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                 </div>
               )}
 
+              {ebook.volume !== undefined && ebook.volume !== '' && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Package size={13} /> {t.ebooksSection.volumeLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>Vol. {ebook.volume}</span>
+                </div>
+              )}
+
+              {displayIsbn && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Hash size={13} /> {t.ebooksSection.isbnLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontFamily: 'monospace' }}>{displayIsbn}</span>
+                </div>
+              )}
+
+              {displayAsin && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Hash size={13} /> {t.ebooksSection.asinLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontFamily: 'monospace' }}>{displayAsin}</span>
+                </div>
+              )}
+
               {ebook.releaseDate && (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
                   <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
-                    <Calendar size={13} /> Data de Lançamento
+                    <Calendar size={13} /> {t.ebooksSection.releaseDateLabel}
                   </span>
                   <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.releaseDate}</span>
                 </div>
@@ -546,37 +644,211 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
               )}
             </div>
 
-            {/* Ações e Checkout */}
+            {/* Ações e Escolha de Formato */}
             <div
               style={{
                 borderTop: '1px solid var(--border-subtle)',
-                paddingTop: '1.5rem',
+                paddingTop: '1.4rem',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '0.8rem'
+                gap: '0.95rem'
               }}
             >
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem' }}>
-                {/* 1. Botão Principal: Abre ESTRITAMENTE o checkout Hotmart específico em nova aba */}
-                {ebook.hotmartCheckoutUrl ? (
-                  <a
-                    href={ebook.hotmartCheckoutUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                    style={{ flex: 1, minWidth: '220px', justifyContent: 'center' }}
-                  >
-                    <Sparkles size={16} />
-                    <span>{t.ebooksSection.buyNow}</span>
-                    <ArrowRight size={15} />
-                  </a>
+              <div>
+                <h4
+                  style={{
+                    fontSize: '0.86rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em',
+                    color: 'var(--text-primary)',
+                    marginBottom: '0.75rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.4rem'
+                  }}
+                >
+                  <Sparkles size={14} color="var(--color-gold-500)" />
+                  <span>{t.ebooksSection.chooseFormatTitle}</span>
+                </h4>
+
+                {availableFormats.length > 0 ? (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.7rem' }}>
+                    {/* 1. E-book Digital — PDF (Hotmart) */}
+                    {channels.pdf.available && channels.pdf.url && (
+                      <div className="format-option-card">
+                        <div style={{ minWidth: 0 }}>
+                          <div
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '0.45rem',
+                              fontWeight: 700,
+                              fontSize: '0.94rem',
+                              color: 'var(--text-primary)',
+                              marginBottom: '0.2rem'
+                            }}
+                          >
+                            <FileText size={16} color="var(--color-orange-500)" style={{ flexShrink: 0 }} />
+                            <span>{t.ebooksSection.pdfFormatTitle}</span>
+                          </div>
+                          <p style={{ fontSize: '0.79rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
+                            {t.ebooksSection.pdfFormatDesc}
+                          </p>
+                          <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', display: 'inline-block', marginTop: '0.2rem' }}>
+                            {t.ebooksSection.hotmartNote}
+                          </span>
+                        </div>
+
+                        <div className="format-option-actions">
+                          <a
+                            href={channels.pdf.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-primary"
+                            style={{ padding: '0.68rem 1.15rem', fontSize: '0.88rem', whiteSpace: 'nowrap' }}
+                          >
+                            <span>{t.ebooksSection.buyEbookBtn}</span>
+                            <ArrowRight size={15} />
+                          </a>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* 2. Livro Impresso — Paperback (Amazon) */}
+                    {channels.paperback.available && channels.paperback.primaryUrl && (
+                      <div className="format-option-card">
+                        <div style={{ minWidth: 0 }}>
+                          <div
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '0.45rem',
+                              fontWeight: 700,
+                              fontSize: '0.94rem',
+                              color: 'var(--text-primary)',
+                              marginBottom: '0.2rem'
+                            }}
+                          >
+                            <BookOpen size={16} color="var(--text-green)" style={{ flexShrink: 0 }} />
+                            <span>{t.ebooksSection.paperbackFormatTitle}</span>
+                          </div>
+                          <p style={{ fontSize: '0.79rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
+                            {t.ebooksSection.paperbackFormatDesc}
+                          </p>
+                          {(channels.paperback.isbn || channels.paperback.asin) && (
+                            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', display: 'inline-block', marginTop: '0.2rem', fontFamily: 'monospace' }}>
+                              {[
+                                channels.paperback.isbn ? `ISBN ${channels.paperback.isbn}` : null,
+                                channels.paperback.asin ? `ASIN ${channels.paperback.asin}` : null
+                              ]
+                                .filter(Boolean)
+                                .join(' • ')}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="format-option-actions">
+                          {channels.paperback.usUrl && (
+                            <a
+                              href={channels.paperback.usUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-green"
+                              style={{ padding: '0.68rem 1.15rem', fontSize: '0.88rem', whiteSpace: 'nowrap' }}
+                            >
+                              <span>{t.ebooksSection.buyAmazonBtn}</span>
+                              <ExternalLink size={14} />
+                            </a>
+                          )}
+
+                          {channels.paperback.ukUrl && (
+                            <a
+                              href={channels.paperback.ukUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={channels.paperback.usUrl ? 'btn btn-outline' : 'btn btn-green'}
+                              style={{ padding: '0.68rem 1rem', fontSize: '0.86rem', whiteSpace: 'nowrap' }}
+                            >
+                              <span>
+                                {channels.paperback.usUrl
+                                  ? t.ebooksSection.amazonUkShortBtn
+                                  : t.ebooksSection.buyAmazonUkBtn}
+                              </span>
+                              <ExternalLink size={14} />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* 3. Kindle (Amazon Kindle) */}
+                    {channels.kindle.available && channels.kindle.primaryUrl && (
+                      <div className="format-option-card">
+                        <div style={{ minWidth: 0 }}>
+                          <div
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '0.45rem',
+                              fontWeight: 700,
+                              fontSize: '0.94rem',
+                              color: 'var(--text-primary)',
+                              marginBottom: '0.2rem'
+                            }}
+                          >
+                            <Tablet size={16} color="var(--color-gold-500)" style={{ flexShrink: 0 }} />
+                            <span>{t.ebooksSection.kindleFormatTitle}</span>
+                          </div>
+                          <p style={{ fontSize: '0.79rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
+                            {t.ebooksSection.kindleFormatDesc}
+                          </p>
+                          {channels.kindle.asin && (
+                            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', display: 'inline-block', marginTop: '0.2rem', fontFamily: 'monospace' }}>
+                              ASIN {channels.kindle.asin}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="format-option-actions">
+                          {channels.kindle.usUrl && (
+                            <a
+                              href={channels.kindle.usUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-navy"
+                              style={{ padding: '0.68rem 1.15rem', fontSize: '0.88rem', whiteSpace: 'nowrap' }}
+                            >
+                              <span>{t.ebooksSection.readKindleBtn}</span>
+                              <ExternalLink size={14} />
+                            </a>
+                          )}
+
+                          {channels.kindle.ukUrl && (
+                            <a
+                              href={channels.kindle.ukUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={channels.kindle.usUrl ? 'btn btn-outline' : 'btn btn-navy'}
+                              style={{ padding: '0.68rem 1rem', fontSize: '0.86rem', whiteSpace: 'nowrap' }}
+                            >
+                              <span>
+                                {channels.kindle.usUrl
+                                  ? t.ebooksSection.amazonUkShortBtn
+                                  : t.ebooksSection.readKindleBtn}
+                              </span>
+                              <ExternalLink size={14} />
+                            </a>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 ) : (
-                  /* Se não houver checkout cadastrado, NUNCA abre WhatsApp: exibe estado informativo */
+                  /* Se não houver nenhum formato com URL válida cadastrada, NUNCA abre WhatsApp: exibe estado informativo */
                   <div
                     style={{
-                      flex: 1,
-                      minWidth: '220px',
-                      padding: '0.8rem 1.2rem',
+                      padding: '0.85rem 1.2rem',
                       borderRadius: 'var(--radius-md)',
                       background: 'var(--bg-secondary)',
                       border: '1px solid var(--border-medium)',
@@ -595,26 +867,26 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                     <span>{t.ebooksSection.checkoutUnavailable}</span>
                   </div>
                 )}
-
-                {/* 2. Botão Secundário: Ver Coleção Completa */}
-                {ebook.collectionId && (
-                  <button
-                    type="button"
-                    onClick={() => {
-                      onClose();
-                      navigate(`/colecoes#${ebook.collectionId}`);
-                    }}
-                    className="btn btn-outline"
-                    style={{ justifyContent: 'center' }}
-                  >
-                    <Layers size={15} color="#D4AF37" />
-                    <span>{t.ebooksSection.viewInCollection}</span>
-                  </button>
-                )}
               </div>
 
-              {/* 3. Atendimento WhatsApp: EXCLUSIVAMENTE no CTA de tirar dúvidas */}
-              <div style={{ textAlign: 'center', marginTop: '0.2rem' }}>
+              {/* Botão Secundário: Ver Coleção Completa */}
+              {ebook.collectionId && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    onClose();
+                    navigate(`/colecoes#${ebook.collectionId}`);
+                  }}
+                  className="btn btn-outline"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                >
+                  <Layers size={15} color="#D4AF37" />
+                  <span>{t.ebooksSection.viewInCollection}</span>
+                </button>
+              )}
+
+              {/* Atendimento WhatsApp: EXCLUSIVAMENTE no CTA de tirar dúvidas */}
+              <div style={{ textAlign: 'center', marginTop: '0.1rem' }}>
                 <a
                   href={whatsAppInquiryUrl}
                   target="_blank"

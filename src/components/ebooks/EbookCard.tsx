@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Ebook } from '../../types';
+import { BookFormat, Ebook } from '../../types';
 import { useApp } from '../../context/AppContext';
-import { BookOpen, FileText, ArrowRight, Layers, Image as ImageIcon } from 'lucide-react';
+import { getAvailableFormats, getFormatBadgeLabel } from '../../utils/bookFormats';
+import { BookOpen, FileText, Tablet, ArrowRight, Layers, Image as ImageIcon } from 'lucide-react';
 import { EbookDetailModal } from './EbookDetailModal';
 
 interface EbookCardProps {
@@ -15,7 +16,44 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
   const [imgError, setImgError] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const coverUrl = ebook.coverImage || `/assets/ebooks/${ebook.slug}.jpg`;
+  const coverUrl =
+    ebook.coverImage !== undefined
+      ? ebook.coverImage
+      : `/assets/ebooks/${ebook.slug}.jpg`;
+  const availableFormats = getAvailableFormats(ebook);
+  const categoryDisplayLabel =
+    ebook.category === 'financas'
+      ? t.searchPage.financeCategory
+      : ebook.category === 'idiomas'
+        ? t.searchPage.languagesCategory
+        : ebook.categoryLabel;
+
+  const renderFormatIcon = (format: BookFormat) => {
+    if (format === 'paperback') return <BookOpen size={11} />;
+    if (format === 'kindle') return <Tablet size={11} />;
+    return <FileText size={11} />;
+  };
+
+  const getFormatBadgeStyle = (format: BookFormat): React.CSSProperties => {
+    if (format === 'paperback') {
+      return {
+        color: 'var(--color-gold-300)',
+        background: 'rgba(10, 39, 28, 0.82)',
+        border: '1px solid rgba(212, 175, 55, 0.4)'
+      };
+    }
+    if (format === 'kindle') {
+      return {
+        color: 'var(--color-orange-400)',
+        background: 'rgba(12, 24, 34, 0.82)',
+        border: '1px solid rgba(244, 162, 97, 0.35)'
+      };
+    }
+    return {
+      color: '#ffffff',
+      background: 'rgba(0, 0, 0, 0.65)'
+    };
+  };
 
   const handleTagClick = (e: React.MouseEvent, kw: string) => {
     e.preventDefault();
@@ -26,11 +64,11 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
 
   return (
     <>
-      <div 
-        className="card-editorial" 
-        style={{ 
-          height: '100%', 
-          justifyContent: 'space-between', 
+      <div
+        className="card-editorial"
+        style={{
+          height: '100%',
+          justifyContent: 'space-between',
           background: 'var(--bg-card)',
           borderRadius: 'var(--radius-lg)',
           border: '1px solid var(--border-subtle)',
@@ -40,7 +78,7 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
       >
         <div>
           {/* Container da Capa: vertical, padrão catálogo/livraria, exibe 100% da imagem oficial com object-fit contain */}
-          <div 
+          <div
             onClick={() => setIsModalOpen(true)}
             role="button"
             tabIndex={0}
@@ -66,7 +104,7 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
               cursor: 'pointer'
             }}
           >
-            {!imgError ? (
+            {coverUrl && !imgError ? (
               <>
                 {/* Fundo ampliado e desfocado da própria capa */}
                 <div
@@ -171,7 +209,8 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
               right: '0.8rem',
               display: 'flex',
               justifyContent: 'space-between',
-              alignItems: 'center',
+              alignItems: 'flex-start',
+              gap: '0.4rem',
               zIndex: 3,
               pointerEvents: 'none'
             }}>
@@ -185,26 +224,40 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
                 borderRadius: 'var(--radius-full)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
-                border: '1px solid rgba(244, 162, 97, 0.3)'
+                border: '1px solid rgba(244, 162, 97, 0.3)',
+                whiteSpace: 'nowrap'
               }}>
-                {ebook.category === 'financas' ? t.searchPage.financeCategory : t.searchPage.languagesCategory}
+                {categoryDisplayLabel}
               </span>
 
-              <span style={{
-                color: '#ffffff',
-                fontSize: '0.68rem',
-                fontWeight: 700,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.25rem',
-                background: 'rgba(0, 0, 0, 0.65)',
-                backdropFilter: 'blur(6px)',
-                padding: '0.2rem 0.5rem',
-                borderRadius: 'var(--radius-sm)'
-              }}>
-                <FileText size={11} />
-                PDF
-              </span>
+              {availableFormats.length > 0 && (
+                <div style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  justifyContent: 'flex-end',
+                  gap: '0.3rem'
+                }}>
+                  {availableFormats.map((fmt) => (
+                    <span
+                      key={fmt}
+                      style={{
+                        fontSize: '0.68rem',
+                        fontWeight: 700,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.25rem',
+                        backdropFilter: 'blur(6px)',
+                        padding: '0.2rem 0.5rem',
+                        borderRadius: 'var(--radius-sm)',
+                        ...getFormatBadgeStyle(fmt)
+                      }}
+                    >
+                      {renderFormatIcon(fmt)}
+                      <span>{getFormatBadgeLabel(fmt)}</span>
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -226,7 +279,7 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
               </div>
             )}
 
-            <h3 
+            <h3
               onClick={() => setIsModalOpen(true)}
               style={{
                 fontFamily: 'var(--font-serif)',
@@ -312,10 +365,10 @@ export const EbookCard: React.FC<EbookCardProps> = ({ ebook }) => {
 
         {/* Ação: Botão Ver Detalhes que abre o Modal Oficial da Obra */}
         <div style={{ padding: '0 1.4rem 1.4rem 1.4rem' }}>
-          <button 
+          <button
             type="button"
             onClick={() => setIsModalOpen(true)}
-            className="btn btn-outline" 
+            className="btn btn-outline"
             style={{ width: '100%', justifyContent: 'center', cursor: 'pointer' }}
           >
             <BookOpen size={16} />

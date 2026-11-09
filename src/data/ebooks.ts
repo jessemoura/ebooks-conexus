@@ -1,4 +1,5 @@
 import { Ebook, Language } from '../types';
+import { bookChannels } from './bookChannels';
 
 export const ebooksData: Record<Language, Ebook[]> = {
   pt: [
@@ -408,6 +409,25 @@ export const ebooksData: Record<Language, Ebook[]> = {
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/R107718922I',
       releaseDate: '2026-04-25'
+    },
+
+    // ==========================================
+    // AMAZON KDP — TÍTULO PREPARADO (DESATIVADO ATÉ CONFIRMAÇÃO PÚBLICA)
+    // ==========================================
+    {
+      id: 'my-first-coloring-book-animals-adventures',
+      slug: 'my-first-coloring-book-animals-adventures',
+      title: 'My First Coloring Book — Animals & Adventures',
+      subtitle: 'Coloring & creative adventure edition for children',
+      description: 'Edição ilustrada preparada para lançamento em livro impresso (Paperback) via Amazon KDP. Campos comerciais e capa aguardam confirmação oficial de publicação.',
+      category: 'infantil',
+      categoryLabel: 'Infantil & Criativo',
+      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'infantil'],
+      format: 'Paperback',
+      language: 'en',
+      coverImage: '',
+      featured: false,
+      releaseDate: ''
     }
   ],
 
@@ -818,6 +838,25 @@ export const ebooksData: Record<Language, Ebook[]> = {
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/R107718922I',
       releaseDate: '2026-04-25'
+    },
+
+    // ==========================================
+    // AMAZON KDP — PREPARED TITLE (DISABLED UNTIL PUBLIC CONFIRMATION)
+    // ==========================================
+    {
+      id: 'my-first-coloring-book-animals-adventures',
+      slug: 'my-first-coloring-book-animals-adventures',
+      title: 'My First Coloring Book — Animals & Adventures',
+      subtitle: 'Coloring & creative adventure edition for children',
+      description: 'Illustrated edition prepared for printed Paperback release via Amazon KDP. Commercial URLs, identifiers, and cover await confirmed public launch.',
+      category: 'infantil',
+      categoryLabel: 'Children & Creative',
+      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'children'],
+      format: 'Paperback',
+      language: 'en',
+      coverImage: '',
+      featured: false,
+      releaseDate: ''
     }
   ],
 
@@ -1228,12 +1267,60 @@ export const ebooksData: Record<Language, Ebook[]> = {
       featured: false,
       hotmartCheckoutUrl: 'https://pay.hotmart.com/R107718922I',
       releaseDate: '2026-04-25'
+    },
+
+    // ==========================================
+    // AMAZON KDP — TÍTULO PREPARADO (DESACTIVADO HASTA CONFIRMACIÓN PÚBLICA)
+    // ==========================================
+    {
+      id: 'my-first-coloring-book-animals-adventures',
+      slug: 'my-first-coloring-book-animals-adventures',
+      title: 'My First Coloring Book — Animals & Adventures',
+      subtitle: 'Coloring & creative adventure edition for children',
+      description: 'Edición ilustrada preparada para lanzamiento en libro impreso (Paperback) vía Amazon KDP. Enlaces comerciales, identificadores y portada esperan confirmación pública oficial.',
+      category: 'infantil',
+      categoryLabel: 'Infantil y Creativo',
+      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'infantil'],
+      format: 'Paperback',
+      language: 'en',
+      coverImage: '',
+      featured: false,
+      releaseDate: ''
     }
   ]
 };
 
-export const getEbooks = (lang: Language = 'pt'): Ebook[] => {
-  return ebooksData[lang] || ebooksData.pt;
+const applyBookChannels = (ebook: Ebook): Ebook => {
+  const channel = bookChannels[ebook.id];
+  if (!channel) return ebook;
+
+  return {
+    ...ebook,
+    published: channel.published !== undefined ? channel.published : ebook.published,
+    language: channel.language || ebook.language,
+    volume: channel.volume ?? ebook.volume,
+    availableFormats:
+      channel.availableFormats !== undefined
+        ? channel.availableFormats
+        : ebook.availableFormats,
+    hotmartEnabled:
+      channel.hotmartEnabled !== undefined
+        ? channel.hotmartEnabled
+        : ebook.hotmartEnabled,
+    hotmartCheckoutUrl: channel.hotmartCheckoutUrl || ebook.hotmartCheckoutUrl,
+    amazonUrl: channel.amazonUrl || ebook.amazonUrl,
+    amazonUkUrl: channel.amazonUkUrl || ebook.amazonUkUrl,
+    kindleUrl: channel.kindleUrl || ebook.kindleUrl,
+    kindleUkUrl: channel.kindleUkUrl || ebook.kindleUkUrl,
+    asin: channel.asin || ebook.asin,
+    kindleAsin: channel.kindleAsin || ebook.kindleAsin,
+    isbn: channel.isbn || ebook.isbn
+  };
 };
 
-export const initialEbooks = ebooksData.pt;
+export const getEbooks = (lang: Language = 'pt', includeUnpublished = false): Ebook[] => {
+  const list = (ebooksData[lang] || ebooksData.pt).map(applyBookChannels);
+  return includeUnpublished ? list : list.filter((ebook) => ebook.published !== false);
+};
+
+export const initialEbooks = getEbooks('pt');

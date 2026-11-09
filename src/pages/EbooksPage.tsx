@@ -8,6 +8,8 @@ import { BundleCard } from '../components/ebooks/BundleCard';
 import { EbookDetailModal } from '../components/ebooks/EbookDetailModal';
 import { SEO } from '../components/common/SEO';
 import { useApp } from '../context/AppContext';
+import { Ebook } from '../types';
+import { getAvailableFormats, getFormatBadgeLabel } from '../utils/bookFormats';
 import { 
   Search, 
   Filter, 
@@ -33,7 +35,7 @@ export const EbooksPage: React.FC = () => {
     return colParam || 'all';
   });
   const [sortBy, setSortBy] = useState<'newest' | 'az' | 'za'>('newest');
-  const [urlSelectedEbook, setUrlSelectedEbook] = useState<any>(null);
+  const [urlSelectedEbook, setUrlSelectedEbook] = useState<Ebook | null>(null);
 
   const ebooks = useMemo(() => getEbooks(language), [language]);
   const collections = useMemo(() => getCollections(language), [language]);
@@ -94,7 +96,7 @@ export const EbooksPage: React.FC = () => {
     }).sort((a, b) => {
       if (sortBy === 'az') return a.title.localeCompare(b.title);
       if (sortBy === 'za') return b.title.localeCompare(a.title);
-      return new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime();
+      return (Date.parse(b.releaseDate) || 0) - (Date.parse(a.releaseDate) || 0);
     });
   }, [bundles, selectedOfferType, selectedCollection, searchQuery, sortBy]);
 
@@ -115,12 +117,28 @@ export const EbooksPage: React.FC = () => {
         const matchesDescription = normalizeText(ebook.description).includes(queryNorm);
         const matchesCollection = ebook.collectionName ? normalizeText(ebook.collectionName).includes(queryNorm) : false;
         const matchesCategory = normalizeText(ebook.categoryLabel).includes(queryNorm);
+        const matchesFormats = getAvailableFormats(ebook).some((fmt) =>
+          normalizeText(getFormatBadgeLabel(fmt)).includes(queryNorm)
+        );
+        const matchesIdentifiers =
+          (ebook.asin ? normalizeText(ebook.asin).includes(queryNorm) : false) ||
+          (ebook.kindleAsin ? normalizeText(ebook.kindleAsin).includes(queryNorm) : false) ||
+          (ebook.isbn ? normalizeText(ebook.isbn).includes(queryNorm) : false);
         const matchesKeywords = ebook.keywords.some((kw) => {
           const kwNorm = normalizeText(kw);
           return kwNorm.includes(queryNorm) || queryNorm.includes(kwNorm);
         });
 
-        if (!matchesTitle && !matchesSubtitle && !matchesDescription && !matchesCollection && !matchesCategory && !matchesKeywords) {
+        if (
+          !matchesTitle &&
+          !matchesSubtitle &&
+          !matchesDescription &&
+          !matchesCollection &&
+          !matchesCategory &&
+          !matchesFormats &&
+          !matchesIdentifiers &&
+          !matchesKeywords
+        ) {
           return false;
         }
       }
@@ -128,11 +146,25 @@ export const EbooksPage: React.FC = () => {
     }).sort((a, b) => {
       if (sortBy === 'az') return a.title.localeCompare(b.title);
       if (sortBy === 'za') return b.title.localeCompare(a.title);
-      return new Date(b.releaseDate).getTime() - new Date(a.releaseDate).getTime();
+      return (Date.parse(b.releaseDate) || 0) - (Date.parse(a.releaseDate) || 0);
     });
   }, [ebooks, selectedOfferType, selectedCollection, searchQuery, sortBy]);
 
   const totalResultsCount = filteredBundles.length + filteredEbooks.length;
+  const totalCatalogCount = bundles.length + ebooks.length;
+  const hasMultiformatActive = useMemo(
+    () =>
+      ebooks.some((ebook) =>
+        getAvailableFormats(ebook).some((fmt) => fmt === 'paperback' || fmt === 'kindle')
+      ),
+    [ebooks]
+  );
+  const catalogSubtitleText = (hasMultiformatActive
+    ? t.ebooksSection.headerSubtitleMultiformat
+    : t.ebooksSection.headerSubtitle
+  )
+    .replace('{singles}', String(ebooks.length))
+    .replace('{bundles}', String(bundles.length));
 
   const handleResetFilters = () => {
     setSearchQuery('');
@@ -145,7 +177,7 @@ export const EbooksPage: React.FC = () => {
     <>
       <SEO 
         title={t.ebooksSection.headerTitle} 
-        description={t.ebooksSection.headerSubtitle}
+        description={catalogSubtitleText}
       />
 
       <main style={{ minHeight: '80vh', paddingBottom: '5rem' }}>
@@ -176,7 +208,7 @@ export const EbooksPage: React.FC = () => {
               color: 'var(--text-secondary)',
               marginBottom: '2.5rem'
             }}>
-              {t.ebooksSection.headerSubtitle}
+              {catalogSubtitleText}
             </p>
 
             {/* Barra de Pesquisa Grande e Destacada */}
@@ -271,7 +303,7 @@ export const EbooksPage: React.FC = () => {
               }}
             >
               <Package size={16} />
-              <span>{t.bundlesSection.filterAll}</span>
+              <span>{t.bundlesSection.filterAll.replace('{count}', String(totalCatalogCount))}</span>
             </button>
 
             <button
@@ -293,7 +325,7 @@ export const EbooksPage: React.FC = () => {
               }}
             >
               <Layers size={16} color={selectedOfferType === 'bundles' ? '#ffffff' : '#D4AF37'} />
-              <span>{t.bundlesSection.filterBundles}</span>
+              <span>{t.bundlesSection.filterBundles.replace('{count}', String(bundles.length))}</span>
             </button>
 
             <button
@@ -315,7 +347,7 @@ export const EbooksPage: React.FC = () => {
               }}
             >
               <BookOpen size={16} />
-              <span>{t.bundlesSection.filterSingles}</span>
+              <span>{t.bundlesSection.filterSingles.replace('{count}', String(ebooks.length))}</span>
             </button>
           </div>
 
@@ -491,7 +523,7 @@ export const EbooksPage: React.FC = () => {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '2.5rem' }}>
                   <BookOpen size={22} color="var(--color-gold-500)" />
                   <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--text-primary)', margin: 0 }}>
-                    {t.bundlesSection.filterSingles}
+                    {t.bundlesSection.filterSingles.replace('{count}', String(filteredEbooks.length))}
                   </h2>
                 </div>
               )}
