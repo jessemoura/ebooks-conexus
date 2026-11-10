@@ -280,21 +280,20 @@ export const bookChannels: Record<string, BookChannelConfig> = {
   },
 
   // =========================================================
-  // PRIMEIRO TÍTULO PREPARADO PARA AMAZON KDP (DESATIVADO)
-  // Ativar somente após página pública Amazon/ASIN confirmados.
+  // PRIMEIRO TÍTULO FÍSICO AMAZON KDP (PAPERBACK)
   // =========================================================
   'my-first-coloring-book-animals-adventures': {
-    published: false,
+    published: true,
     language: 'en',
-    availableFormats: [], // Alterar para ['paperback'] quando URL/ASIN oficiais estiverem confirmados
+    availableFormats: ['paperback'],
     hotmartEnabled: false,
     hotmartCheckoutUrl: '',
     amazonUrl: '',
-    amazonUkUrl: '',
+    amazonUkUrl: 'https://www.amazon.co.uk/dp/B0HR58K85F',
     kindleUrl: '',
     kindleUkUrl: '',
-    asin: '',
-    isbn: ''
+    asin: 'B0HR58K85F',
+    isbn: '9798141069703'
   }
 };
 

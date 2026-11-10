@@ -25,8 +25,8 @@ export const translations = {
         future: 'CONHECIMENTO PARA O SEU FUTURO'
       },
       benefits: {
-        b1Title: '100% Digital',
-        b1Desc: 'Acesse quando e onde quiser',
+        b1Title: 'Digital & Impresso',
+        b1Desc: 'E-books digitais e títulos selecionados em edição impressa',
         b2Title: 'Pagamento seguro',
         b2Desc: 'Compra simples e protegida',
         b3Title: 'Leia em qualquer dispositivo',
@@ -93,6 +93,10 @@ export const translations = {
       releaseDateLabel: 'Data de Lançamento',
       asinLabel: 'ASIN',
       isbnLabel: 'ISBN',
+      illustrationsFieldLabel: 'Conteúdo',
+      illustrationsCountSuffix: 'ilustrações',
+      dimensionsLabel: 'Tamanho',
+      ageRangeLabel: 'Faixa etária',
       tagsLabel: 'Palavras-chave & Tópicos',
       buyNow: 'Adquirir E-book Oficial',
       chooseFormatTitle: 'Escolha o formato',
@@ -101,7 +105,8 @@ export const translations = {
       buyEbookBtn: 'Comprar E-book',
       hotmartNote: 'Checkout oficial Hotmart',
       paperbackFormatTitle: 'Livro Impresso — Paperback',
-      paperbackFormatDesc: 'Livro físico impresso em capa comum • Envio pela Amazon',
+      paperbackFormatDesc: 'Edição física impressa em capa comum',
+      paperbackAmazonUkNotice: 'Livro físico vendido pela Amazon UK. Disponibilidade, entrega, frete e prazo são informados pela Amazon de acordo com o endereço do comprador.',
       buyAmazonBtn: 'Comprar na Amazon',
       buyAmazonUkBtn: 'Comprar na Amazon UK',
       amazonUkShortBtn: 'Amazon UK (.co.uk)',
@@ -124,7 +129,7 @@ export const translations = {
       p2Title: 'Didática Editorial & Fluidez',
       p2Desc: 'Design de leitura planejado para absorção rápida, visual elegante e estrutura de aprendizado orientada à ação.',
       p3Title: 'Multiplataforma & Acessibilidade',
-      p3Desc: 'Formato digital em PDF de alta resolução, otimizado para leitura confortável em tablets, computadores e smartphones.',
+      p3Desc: 'E-books em PDF/Kindle para ler em tablets, computadores e celulares, além de títulos selecionados em edição impressa.',
       p4Title: 'Atualizações Contínuas',
       p4Desc: 'Nossos e-books e coleções acompanham as constantes transformações do mercado global e da linguística contemporânea.'
     },
@@ -170,7 +175,7 @@ export const translations = {
     faqSection: {
       badge: 'Dúvidas Frequentes',
       title: 'Perguntas Frequentes',
-      subtitle: 'Esclareça os principais pontos sobre nossas obras, formato digital e acesso às coleções.',
+      subtitle: 'Esclareça os principais pontos sobre nossos e-books digitais, títulos selecionados em edição impressa e coleções.',
       notFoundTitle: 'Não encontrou a resposta que procurava?',
       notFoundSubtitle: 'Envie sua dúvida para a CONEXUS E-BOOKS. Nossa equipe terá prazer em ajudar.',
       sendQuestionBtn: 'Enviar uma pergunta',
@@ -182,20 +187,20 @@ export const translations = {
       successSubtitle: 'Responderemos sua dúvida diretamente no seu e-mail.',
       items: [
         {
-          q: 'Como recebo meu e-book após a compra?',
-          a: 'Imediatamente após a confirmação do pagamento, você recebe um e-mail com o link direto e seguro para baixar seus arquivos em formato PDF de alta resolução.'
+          q: 'Como recebo meu livro após a compra?',
+          a: 'Nos e-books digitais (PDF via Hotmart), você recebe imediatamente um e-mail com o link direto para download; nas edições Kindle, o envio é imediato para o aplicativo ou dispositivo Kindle. Para títulos selecionados em livro impresso (Paperback), disponibilidade, envio, frete e prazo são informados pela Amazon de acordo com o endereço do comprador.'
         },
         {
           q: 'Posso ler os e-books no celular, tablet ou computador?',
-          a: 'Sim. Os e-books são formatados em PDF padrão universal, compatíveis com qualquer leitor de PDF em smartphones (iOS e Android), tablets, notebooks e computadores.'
+          a: 'Sim. Os e-books são formatados em PDF padrão universal (ou edição Kindle nos títulos disponíveis), compatíveis com smartphones (iOS e Android), tablets, leitores Kindle, notebooks e computadores.'
         },
         {
           q: 'Posso comprar apenas um volume ou a coleção completa?',
           a: 'Você tem total liberdade para adquirir volumes individuais conforme seu interesse ou aproveitar as coleções completas para uma jornada de aprendizado sequencial.'
         },
         {
-          q: 'Como funciona o pagamento e o acesso aos e-books?',
-          a: 'As transações são processadas em ambiente criptografado e seguro por plataformas homologadas. O acesso ao material baixado é permanente para você consultar sempre que desejar.'
+          q: 'Como funciona o pagamento e o acesso aos materiais?',
+          a: 'As transações são processadas em ambiente criptografado e seguro por plataformas homologadas (Hotmart para PDFs e Amazon para livros impressos e Kindle). O acesso aos e-books baixados é permanente.'
         },
         {
           q: 'Como posso falar com a CONEXUS E-BOOKS?',
@@ -208,7 +213,7 @@ export const translations = {
       title: 'Sobre a CONEXUS E-BOOKS',
       seoTitle: 'Sobre a Editora',
       seoDesc: 'Conheça a história, missão e o rigor editorial da CONEXUS E-BOOKS. Transformando conhecimento técnico e multidisciplinar em livros de alto valor prático.',
-      intro: 'A CONEXUS E-BOOKS nasceu com o compromisso de oferecer publicações digitais com padrão gráfico e editorial de alta sofisticação, unindo rigor analítico a uma leitura fluida, prática e transformadora.',
+      intro: 'A CONEXUS E-BOOKS nasceu com o compromisso de oferecer e-books digitais e títulos selecionados em edição impressa com padrão gráfico e editorial de alta sofisticação, unindo rigor analítico a uma leitura fluida, prática e transformadora.',
       missionTitle: 'Nossa Missão & Propósito',
       missionP1: 'Acreditamos que o conhecimento verdadeiro não precisa ser árido nem superficial. Nosso propósito é construir pontes entre conceitos avançados e a aplicação concreta na vida de leitores, profissionais e pessoas em busca de constante evolução.',
       missionP2: 'Cada uma de nossas coleções é meticulosamente estruturada em volumes temáticos, permitindo que o leitor avance com segurança do aprendizado básico ao domínio aprofundado.',
@@ -216,7 +221,7 @@ export const translations = {
       q1Title: 'Revisão Rigorosa',
       q1Desc: 'Todas as obras passam por múltiplos ciclos de checagem conceitual, gramatical e de clareza.',
       q2Title: 'Design Tipográfico',
-      q2Desc: 'Diagramação planejada para leitura agradável e fluida em qualquer formato digital.',
+      q2Desc: 'Diagramação planejada para leitura agradável e fluida em formato digital ou edição impressa.',
       q3Title: 'Suporte ao Leitor',
       q3Desc: 'Canais diretos de atendimento para esclarecimento de dúvidas sobre nossos materiais.'
     },
@@ -317,8 +322,8 @@ export const translations = {
         future: 'KNOWLEDGE FOR YOUR FUTURE'
       },
       benefits: {
-        b1Title: '100% Digital',
-        b1Desc: 'Access whenever and wherever you want',
+        b1Title: 'Digital & Print',
+        b1Desc: 'Digital e-books and selected titles in print edition',
         b2Title: 'Secure payment',
         b2Desc: 'Simple and protected checkout',
         b3Title: 'Read on any device',
@@ -385,6 +390,10 @@ export const translations = {
       releaseDateLabel: 'Release Date',
       asinLabel: 'ASIN',
       isbnLabel: 'ISBN',
+      illustrationsFieldLabel: 'Content',
+      illustrationsCountSuffix: 'illustrations',
+      dimensionsLabel: 'Trim Size',
+      ageRangeLabel: 'Age range',
       tagsLabel: 'Keywords & Topics',
       buyNow: 'Get Official E-book',
       chooseFormatTitle: 'Choose your format',
@@ -393,7 +402,8 @@ export const translations = {
       buyEbookBtn: 'Buy E-book',
       hotmartNote: 'Official Hotmart checkout',
       paperbackFormatTitle: 'Printed Book — Paperback',
-      paperbackFormatDesc: 'Physical printed paperback book • Fulfilled by Amazon',
+      paperbackFormatDesc: 'Physical printed paperback edition',
+      paperbackAmazonUkNotice: 'Physical book sold through Amazon UK. Availability, delivery, shipping costs and estimated delivery times are provided by Amazon according to the buyer’s address.',
       buyAmazonBtn: 'Buy on Amazon',
       buyAmazonUkBtn: 'Buy on Amazon UK',
       amazonUkShortBtn: 'Amazon UK (.co.uk)',
@@ -416,7 +426,7 @@ export const translations = {
       p2Title: 'Editorial Didactics & Flow',
       p2Desc: 'Reading design tailored for fast absorption, elegant visuals, and action-oriented learning structure.',
       p3Title: 'Multiplatform & Accessibility',
-      p3Desc: 'High-resolution PDF digital format optimized for comfortable reading across tablets, computers, and smartphones.',
+      p3Desc: 'Digital e-books in PDF and Kindle optimized for any device, alongside selected titles in printed Paperback edition.',
       p4Title: 'Continuous Updates',
       p4Desc: 'Our books and series continuously evolve alongside global market and language advancements.'
     },
@@ -462,7 +472,7 @@ export const translations = {
     faqSection: {
       badge: 'Frequent Questions',
       title: 'Frequently Asked Questions',
-      subtitle: 'Clarify key questions about our publications, digital format, and collection access.',
+      subtitle: 'Clarify key questions about our digital e-books, selected print titles, and collection access.',
       notFoundTitle: "Didn't find what you were looking for?",
       notFoundSubtitle: 'Send your question to CONEXUS E-BOOKS. Our team will be happy to help.',
       sendQuestionBtn: 'Send a question',
@@ -474,20 +484,20 @@ export const translations = {
       successSubtitle: 'We will reply to your question directly via email.',
       items: [
         {
-          q: 'How do I receive my ebook after purchase?',
-          a: 'Immediately after payment confirmation, you receive an email with a direct and secure link to download your files in high-resolution PDF format.'
+          q: 'How do I receive my book after purchase?',
+          a: 'For digital e-books (PDF via Hotmart), you immediately receive an email with a secure download link; Kindle editions are delivered instantly to your Kindle device or app. For selected printed Paperback titles, availability, delivery, shipping costs and estimated delivery times are provided by Amazon according to your address.'
         },
         {
           q: 'Can I read the ebooks on phone, tablet, or computer?',
-          a: 'Yes. Ebooks are formatted in universal standard PDF, compatible with any PDF reader on smartphones (iOS and Android), tablets, laptops, and desktop computers.'
+          a: 'Yes. Ebooks are formatted in universal standard PDF (and Kindle edition where available), compatible with smartphones (iOS and Android), tablets, Kindle e-readers, laptops, and desktop computers.'
         },
         {
           q: 'Can I purchase just a single volume or the full collection?',
           a: 'You have complete freedom to acquire individual volumes according to your interest or purchase complete collections for a structured learning path.'
         },
         {
-          q: 'How does payment and ebook access work?',
-          a: 'Transactions are processed in a secure, encrypted environment by certified platforms. Access to downloaded materials is permanent for you to consult whenever you want.'
+          q: 'How does payment and material access work?',
+          a: 'Transactions are processed in a secure, encrypted environment by certified platforms (Hotmart for PDFs and Amazon for Paperback and Kindle editions). Access to downloaded e-books is permanent.'
         },
         {
           q: 'How can I contact CONEXUS E-BOOKS?',
@@ -500,7 +510,7 @@ export const translations = {
       title: 'About CONEXUS E-BOOKS',
       seoTitle: 'About the Publishing House',
       seoDesc: 'Discover the history, mission, and editorial rigor of CONEXUS E-BOOKS. Transforming technical and multidisciplinary knowledge into high-value practical books.',
-      intro: 'CONEXUS E-BOOKS was created with the commitment to offer digital publications with high-standard graphic and editorial excellence, uniting analytical rigor with fluent, practical, and transformative reading.',
+      intro: 'CONEXUS E-BOOKS was created with the commitment to offer digital e-books and selected print editions with high-standard graphic and editorial excellence, uniting analytical rigor with fluent, practical, and transformative reading.',
       missionTitle: 'Our Mission & Purpose',
       missionP1: 'We believe true knowledge does not need to be arid or superficial. Our purpose is to build bridges between advanced concepts and practical application for readers, professionals, and lifelong learners.',
       missionP2: 'Each of our collections is meticulously structured in thematic volumes, allowing the reader to progress with confidence from fundamentals to advanced mastery.',
@@ -508,7 +518,7 @@ export const translations = {
       q1Title: 'Rigorous Review',
       q1Desc: 'All works undergo multiple cycles of conceptual, grammatical, and clarity verification.',
       q2Title: 'Typographic Design',
-      q2Desc: 'Layout designed for enjoyable and fluid reading across any digital format.',
+      q2Desc: 'Layout designed for enjoyable and fluid reading across both digital screens and printed editions.',
       q3Title: 'Reader Support',
       q3Desc: 'Direct support channels for questions and assistance regarding our materials.'
     },
@@ -609,8 +619,8 @@ export const translations = {
         future: 'CONOCIMIENTO PARA TU FUTURO'
       },
       benefits: {
-        b1Title: '100% Digital',
-        b1Desc: 'Accede cuando y donde quieras',
+        b1Title: 'Digital e Impreso',
+        b1Desc: 'E-books digitales y títulos seleccionados en edición impresa',
         b2Title: 'Pago seguro',
         b2Desc: 'Compra simple y protegida',
         b3Title: 'Lee en cualquier dispositivo',
@@ -677,6 +687,10 @@ export const translations = {
       releaseDateLabel: 'Fecha de Lanzamiento',
       asinLabel: 'ASIN',
       isbnLabel: 'ISBN',
+      illustrationsFieldLabel: 'Contenido',
+      illustrationsCountSuffix: 'ilustraciones',
+      dimensionsLabel: 'Tamaño',
+      ageRangeLabel: 'Edad recomendada',
       tagsLabel: 'Palabras clave y Temas',
       buyNow: 'Adquirir E-book Oficial',
       chooseFormatTitle: 'Elige el formato',
@@ -685,7 +699,8 @@ export const translations = {
       buyEbookBtn: 'Comprar E-book',
       hotmartNote: 'Checkout oficial Hotmart',
       paperbackFormatTitle: 'Libro Impreso — Paperback',
-      paperbackFormatDesc: 'Libro físico impreso en tapa blanda • Envío por Amazon',
+      paperbackFormatDesc: 'Edición física impresa en tapa blanda',
+      paperbackAmazonUkNotice: 'Libro físico vendido a través de Amazon UK. La disponibilidad, entrega, gastos de envío y plazos son informados por Amazon según la dirección del comprador.',
       buyAmazonBtn: 'Comprar en Amazon',
       buyAmazonUkBtn: 'Comprar en Amazon UK',
       amazonUkShortBtn: 'Amazon UK (.co.uk)',
@@ -708,7 +723,7 @@ export const translations = {
       p2Title: 'Didáctica Editorial y Fluidez',
       p2Desc: 'Diseño de lectura pensado para una absorción ágil, visual elegante y estructura orientada a la acción.',
       p3Title: 'Multiplataforma y Accesibilidad',
-      p3Desc: 'Formato digital en PDF de alta resolución, optimizado para una lectura cómoda en cualquier dispositivo.',
+      p3Desc: 'E-books digitales en PDF y Kindle optimizados para cualquier dispositivo, junto con títulos seleccionados en edición impresa.',
       p4Title: 'Actualizaciones Continuas',
       p4Desc: 'Nuestras obras evolucionan constantemente junto a las transformaciones del mercado global.'
     },
@@ -754,7 +769,7 @@ export const translations = {
     faqSection: {
       badge: 'Dudas Frecuentes',
       title: 'Preguntas Frecuentes',
-      subtitle: 'Aclare los puntos clave sobre nuestras obras, formato digital y acceso a las colecciones.',
+      subtitle: 'Aclare los puntos clave sobre nuestros e-books digitales, títulos seleccionados en edición impresa y acceso a las colecciones.',
       notFoundTitle: '¿No encontró la respuesta que buscaba?',
       notFoundSubtitle: 'Envíe su consulta a CONEXUS E-BOOKS. Nuestro equipo estará encantado de ayudarle.',
       sendQuestionBtn: 'Enviar una pregunta',
@@ -766,20 +781,20 @@ export const translations = {
       successSubtitle: 'Responderemos a su consulta directamente en su correo electrónico.',
       items: [
         {
-          q: '¿Cómo recibo mi e-book tras la compra?',
-          a: 'Inmediatamente después de la confirmación del pago, recibe un correo con el enlace directo y seguro para descargar sus archivos en formato PDF de alta resolución.'
+          q: '¿Cómo recibo mi libro tras la compra?',
+          a: 'Para e-books digitales (PDF vía Hotmart), recibe inmediatamente un correo con el enlace seguro de descarga; las ediciones Kindle se envían al instante a su dispositivo o app Kindle. Para títulos seleccionados en edición física (Paperback), la disponibilidad, entrega, gastos de envío y plazos son informados por Amazon según su dirección.'
         },
         {
           q: '¿Puedo leer los e-books en móvil, tablet o computadora?',
-          a: 'Sí. Los e-books están formateados en PDF estándar universal, compatibles con cualquier lector de PDF en smartphones (iOS y Android), tablets, portátiles y computadoras.'
+          a: 'Sí. Los e-books están formateados en PDF estándar universal (y edición Kindle en títulos disponibles), compatibles con smartphones (iOS y Android), tablets, lectores Kindle, portátiles y computadoras.'
         },
         {
           q: '¿Puedo comprar solo un volumen o la colección completa?',
           a: 'Tiene total libertad para adquirir volúmenes individuales según su interés o aprovechar las colecciones completas para un itinerario de aprendizaje progresivo.'
         },
         {
-          q: '¿Cómo funciona el pago y el acceso a los e-books?',
-          a: 'Las transacciones se procesan en un entorno cifrado y seguro mediante plataformas certificadas. El acceso al material descargado es permanente para que lo consulte siempre que lo desee.'
+          q: '¿Cómo funciona el pago y el acceso a los materiales?',
+          a: 'Las transacciones se procesan en un entorno cifrado y seguro mediante plataformas certificadas (Hotmart para PDF y Amazon para ediciones impresas y Kindle). El acceso a los e-books descargados es permanente.'
         },
         {
           q: '¿Cómo puedo comunicarme con CONEXUS E-BOOKS?',
@@ -792,7 +807,7 @@ export const translations = {
       title: 'Sobre CONEXUS E-BOOKS',
       seoTitle: 'Sobre la Editorial',
       seoDesc: 'Conozca la historia, misión y rigor editorial de CONEXUS E-BOOKS. Transformando conocimiento técnico y multidisciplinario en libros de alto valor práctico.',
-      intro: 'CONEXUS E-BOOKS nació con el compromiso de ofrecer publicaciones digitales con un estándar gráfico y editorial de alta sofisticación, uniendo rigor analítico con una lectura fluida, práctica y transformadora.',
+      intro: 'CONEXUS E-BOOKS nació con el compromiso de ofrecer e-books digitales y títulos seleccionados en edición impresa con un estándar gráfico y editorial de alta sofisticación, uniendo rigor analítico con una lectura fluida, práctica y transformadora.',
       missionTitle: 'Nuestra Misión y Propósito',
       missionP1: 'Creemos que el conocimiento verdadero no tiene por qué ser árido ni superficial. Nuestro propósito es tender puentes entre conceptos avanzados y la aplicación concreta en la vida de lectores, profesionales y personas en constante evolución.',
       missionP2: 'Cada una de nuestras colecciones está meticulosamente estructurada en volúmenes temáticos, permitiendo al lector avanzar con seguridad desde el aprendizaje básico hasta el dominio profundo.',
@@ -800,7 +815,7 @@ export const translations = {
       q1Title: 'Revisión Rigurosa',
       q1Desc: 'Todas las obras pasan por múltiples ciclos de comprobación conceptual, gramatical y de claridad.',
       q2Title: 'Diseño Tipográfico',
-      q2Desc: 'Maquetación pensada para una lectura agradable y fluida en cualquier formato digital.',
+      q2Desc: 'Maquetación pensada para una lectura agradable y fluida tanto en formato digital como en edición impresa.',
       q3Title: 'Soporte al Lector',
       q3Desc: 'Canales directos de atención para responder consultas sobre nuestros materiales.'
     },

@@ -123,7 +123,9 @@ export const EbooksPage: React.FC = () => {
         const matchesIdentifiers =
           (ebook.asin ? normalizeText(ebook.asin).includes(queryNorm) : false) ||
           (ebook.kindleAsin ? normalizeText(ebook.kindleAsin).includes(queryNorm) : false) ||
-          (ebook.isbn ? normalizeText(ebook.isbn).includes(queryNorm) : false);
+          (ebook.isbn ? normalizeText(ebook.isbn).includes(queryNorm) : false) ||
+          (ebook.ageRange ? normalizeText(ebook.ageRange).includes(queryNorm) : false) ||
+          (ebook.dimensions ? normalizeText(ebook.dimensions).includes(queryNorm) : false);
         const matchesKeywords = ebook.keywords.some((kw) => {
           const kwNorm = normalizeText(kw);
           return kwNorm.includes(queryNorm) || queryNorm.includes(kwNorm);

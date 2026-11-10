@@ -53,6 +53,9 @@ export interface Ebook {
   categoryLabel: string;
   keywords: string[];
   pages?: number;
+  illustrations?: number;
+  dimensions?: string;
+  ageRange?: string;
   format: string; // "PDF" / "Paperback" (compatibilidade)
   availableFormats?: BookFormat[]; // Ex.: ['pdf'], ['pdf', 'paperback'], ['paperback', 'kindle']
   language?: Language | string; // Idioma real da obra ('pt' | 'en' | 'es' | string)

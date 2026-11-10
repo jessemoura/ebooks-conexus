@@ -25,6 +25,8 @@ import {
   Lock,
   Hash,
   Package,
+  Maximize2,
+  Users,
   Image as ImageIcon
 } from 'lucide-react';
 
@@ -201,6 +203,18 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
             border: 1px solid var(--border-subtle);
             transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
           }
+          .format-option-card--stacked {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.75rem;
+          }
+          .format-option-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 100%;
+          }
           .format-option-card:hover {
             border-color: var(--border-gold);
             box-shadow: var(--shadow-sm);
@@ -212,7 +226,8 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
             flex-shrink: 0;
           }
           @media (max-width: 560px) {
-            .format-option-card {
+            .format-option-card,
+            .format-option-row {
               flex-direction: column;
               align-items: stretch;
             }
@@ -453,6 +468,35 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
                     <BookOpen size={13} /> {t.ebooksSection.pagesLabel}
                   </span>
                   <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.pages} {t.ebooksSection.pagesLabel}</span>
+                </div>
+              )}
+
+              {typeof ebook.illustrations === 'number' && ebook.illustrations > 0 && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Sparkles size={13} /> {t.ebooksSection.illustrationsFieldLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>
+                    {ebook.illustrations} {t.ebooksSection.illustrationsCountSuffix}
+                  </span>
+                </div>
+              )}
+
+              {ebook.dimensions && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Maximize2 size={13} /> {t.ebooksSection.dimensionsLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.dimensions}</span>
+                </div>
+              )}
+
+              {ebook.ageRange && (
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.82rem' }}>
+                  <span style={{ color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Users size={13} /> {t.ebooksSection.ageRangeLabel}
+                  </span>
+                  <span style={{ fontWeight: 700, color: 'var(--text-primary)' }}>{ebook.ageRange}</span>
                 </div>
               )}
 
@@ -717,68 +761,85 @@ export const EbookDetailModal: React.FC<EbookDetailModalProps> = ({
 
                     {/* 2. Livro Impresso — Paperback (Amazon) */}
                     {channels.paperback.available && channels.paperback.primaryUrl && (
-                      <div className="format-option-card">
-                        <div style={{ minWidth: 0 }}>
-                          <div
+                      <div className="format-option-card format-option-card--stacked">
+                        <div className="format-option-row">
+                          <div style={{ minWidth: 0 }}>
+                            <div
+                              style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.45rem',
+                                fontWeight: 700,
+                                fontSize: '0.94rem',
+                                color: 'var(--text-primary)',
+                                marginBottom: '0.2rem'
+                              }}
+                            >
+                              <BookOpen size={16} color="var(--text-green)" style={{ flexShrink: 0 }} />
+                              <span>{t.ebooksSection.paperbackFormatTitle}</span>
+                            </div>
+                            <p style={{ fontSize: '0.79rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
+                              {t.ebooksSection.paperbackFormatDesc}
+                            </p>
+                            {(channels.paperback.isbn || channels.paperback.asin) && (
+                              <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', display: 'inline-block', marginTop: '0.2rem', fontFamily: 'monospace' }}>
+                                {[
+                                  channels.paperback.isbn ? `ISBN ${channels.paperback.isbn}` : null,
+                                  channels.paperback.asin ? `ASIN ${channels.paperback.asin}` : null
+                                ]
+                                  .filter(Boolean)
+                                  .join(' • ')}
+                              </span>
+                            )}
+                          </div>
+
+                          <div className="format-option-actions">
+                            {channels.paperback.usUrl && (
+                              <a
+                                href={channels.paperback.usUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-green"
+                                style={{ padding: '0.68rem 1.15rem', fontSize: '0.88rem', whiteSpace: 'nowrap' }}
+                              >
+                                <span>{t.ebooksSection.buyAmazonBtn}</span>
+                                <ExternalLink size={14} />
+                              </a>
+                            )}
+
+                            {channels.paperback.ukUrl && (
+                              <a
+                                href={channels.paperback.ukUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={channels.paperback.usUrl ? 'btn btn-outline' : 'btn btn-green'}
+                                style={{ padding: '0.68rem 1rem', fontSize: '0.86rem', whiteSpace: 'nowrap' }}
+                              >
+                                <span>
+                                  {channels.paperback.usUrl
+                                    ? t.ebooksSection.amazonUkShortBtn
+                                    : t.ebooksSection.buyAmazonUkBtn}
+                                </span>
+                                <ExternalLink size={14} />
+                              </a>
+                            )}
+                          </div>
+                        </div>
+
+                        {!channels.paperback.usUrl && channels.paperback.ukUrl && (
+                          <p
                             style={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: '0.45rem',
-                              fontWeight: 700,
-                              fontSize: '0.94rem',
-                              color: 'var(--text-primary)',
-                              marginBottom: '0.2rem'
+                              fontSize: '0.76rem',
+                              color: 'var(--text-muted)',
+                              margin: 0,
+                              lineHeight: 1.45,
+                              paddingTop: '0.55rem',
+                              borderTop: '1px dashed var(--border-subtle)'
                             }}
                           >
-                            <BookOpen size={16} color="var(--text-green)" style={{ flexShrink: 0 }} />
-                            <span>{t.ebooksSection.paperbackFormatTitle}</span>
-                          </div>
-                          <p style={{ fontSize: '0.79rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.4 }}>
-                            {t.ebooksSection.paperbackFormatDesc}
+                            {t.ebooksSection.paperbackAmazonUkNotice}
                           </p>
-                          {(channels.paperback.isbn || channels.paperback.asin) && (
-                            <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', display: 'inline-block', marginTop: '0.2rem', fontFamily: 'monospace' }}>
-                              {[
-                                channels.paperback.isbn ? `ISBN ${channels.paperback.isbn}` : null,
-                                channels.paperback.asin ? `ASIN ${channels.paperback.asin}` : null
-                              ]
-                                .filter(Boolean)
-                                .join(' • ')}
-                            </span>
-                          )}
-                        </div>
-
-                        <div className="format-option-actions">
-                          {channels.paperback.usUrl && (
-                            <a
-                              href={channels.paperback.usUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="btn btn-green"
-                              style={{ padding: '0.68rem 1.15rem', fontSize: '0.88rem', whiteSpace: 'nowrap' }}
-                            >
-                              <span>{t.ebooksSection.buyAmazonBtn}</span>
-                              <ExternalLink size={14} />
-                            </a>
-                          )}
-
-                          {channels.paperback.ukUrl && (
-                            <a
-                              href={channels.paperback.ukUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={channels.paperback.usUrl ? 'btn btn-outline' : 'btn btn-green'}
-                              style={{ padding: '0.68rem 1rem', fontSize: '0.86rem', whiteSpace: 'nowrap' }}
-                            >
-                              <span>
-                                {channels.paperback.usUrl
-                                  ? t.ebooksSection.amazonUkShortBtn
-                                  : t.ebooksSection.buyAmazonUkBtn}
-                              </span>
-                              <ExternalLink size={14} />
-                            </a>
-                          )}
-                        </div>
+                        )}
                       </div>
                     )}
 

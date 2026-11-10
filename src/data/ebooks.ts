@@ -412,22 +412,26 @@ export const ebooksData: Record<Language, Ebook[]> = {
     },
 
     // ==========================================
-    // AMAZON KDP — TÍTULO PREPARADO (DESATIVADO ATÉ CONFIRMAÇÃO PÚBLICA)
+    // AMAZON KDP — PRIMEIRO LIVRO FÍSICO (PAPERBACK)
     // ==========================================
     {
       id: 'my-first-coloring-book-animals-adventures',
       slug: 'my-first-coloring-book-animals-adventures',
       title: 'My First Coloring Book — Animals & Adventures',
-      subtitle: 'Coloring & creative adventure edition for children',
-      description: 'Edição ilustrada preparada para lançamento em livro impresso (Paperback) via Amazon KDP. Campos comerciais e capa aguardam confirmação oficial de publicação.',
+      subtitle: 'Livro físico infantil para colorir com 80 ilustrações (Edição em Inglês • 4–8 anos)',
+      description: 'Livro físico infantil para colorir em inglês da CONEXUS E-BOOKS. My First Coloring Book — Animals & Adventures reúne 80 ilustrações de animais e aventuras em 164 páginas no formato grande 8.5 × 11", indicado para crianças de 4 a 8 anos, em edição física Paperback disponível através da Amazon.',
       category: 'infantil',
-      categoryLabel: 'Infantil & Criativo',
-      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'infantil'],
+      categoryLabel: 'Infantil',
+      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'infantil', '4-8 anos'],
+      pages: 164,
+      illustrations: 80,
+      dimensions: '8.5 × 11"',
+      ageRange: '4–8 anos',
       format: 'Paperback',
       language: 'en',
-      coverImage: '',
+      coverImage: '/assets/ebooks/my-first-coloring-book-cover.png',
       featured: false,
-      releaseDate: ''
+      releaseDate: '2026-11-10'
     }
   ],
 
@@ -841,22 +845,26 @@ export const ebooksData: Record<Language, Ebook[]> = {
     },
 
     // ==========================================
-    // AMAZON KDP — PREPARED TITLE (DISABLED UNTIL PUBLIC CONFIRMATION)
+    // AMAZON KDP — FIRST PHYSICAL BOOK (PAPERBACK)
     // ==========================================
     {
       id: 'my-first-coloring-book-animals-adventures',
       slug: 'my-first-coloring-book-animals-adventures',
       title: 'My First Coloring Book — Animals & Adventures',
-      subtitle: 'Coloring & creative adventure edition for children',
-      description: 'Illustrated edition prepared for printed Paperback release via Amazon KDP. Commercial URLs, identifiers, and cover await confirmed public launch.',
+      subtitle: 'Children’s printed coloring book with 80 illustrations (English Edition • Ages 4–8)',
+      description: 'Physical children’s coloring book published in English by CONEXUS E-BOOKS. My First Coloring Book — Animals & Adventures brings 80 animal and adventure illustrations across 164 pages in a large 8.5 × 11" size, designed for children aged 4–8 in a printed Paperback edition available through Amazon.',
       category: 'infantil',
-      categoryLabel: 'Children & Creative',
-      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'children'],
+      categoryLabel: 'Children',
+      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'children', 'ages 4-8'],
+      pages: 164,
+      illustrations: 80,
+      dimensions: '8.5 × 11"',
+      ageRange: '4–8 years',
       format: 'Paperback',
       language: 'en',
-      coverImage: '',
+      coverImage: '/assets/ebooks/my-first-coloring-book-cover.png',
       featured: false,
-      releaseDate: ''
+      releaseDate: '2026-11-10'
     }
   ],
 
@@ -1270,22 +1278,26 @@ export const ebooksData: Record<Language, Ebook[]> = {
     },
 
     // ==========================================
-    // AMAZON KDP — TÍTULO PREPARADO (DESACTIVADO HASTA CONFIRMACIÓN PÚBLICA)
+    // AMAZON KDP — PRIMER LIBRO FÍSICO (PAPERBACK)
     // ==========================================
     {
       id: 'my-first-coloring-book-animals-adventures',
       slug: 'my-first-coloring-book-animals-adventures',
       title: 'My First Coloring Book — Animals & Adventures',
-      subtitle: 'Coloring & creative adventure edition for children',
-      description: 'Edición ilustrada preparada para lanzamiento en libro impreso (Paperback) vía Amazon KDP. Enlaces comerciales, identificadores y portada esperan confirmación pública oficial.',
+      subtitle: 'Libro físico infantil para colorear con 80 ilustraciones (Edición en Inglés • 4–8 años)',
+      description: 'Libro físico infantil para colorear publicado en inglés por CONEXUS E-BOOKS. My First Coloring Book — Animals & Adventures reúne 80 ilustraciones de animales y aventuras en 164 páginas en formato grande de 8.5 × 11", indicado para niños de 4 a 8 años, en edición impresa (Paperback) disponible a través de Amazon.',
       category: 'infantil',
-      categoryLabel: 'Infantil y Creativo',
-      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'infantil'],
+      categoryLabel: 'Infantil',
+      keywords: ['coloring book', 'animals', 'adventures', 'paperback', 'infantil', '4-8 años'],
+      pages: 164,
+      illustrations: 80,
+      dimensions: '8.5 × 11"',
+      ageRange: '4–8 años',
       format: 'Paperback',
       language: 'en',
-      coverImage: '',
+      coverImage: '/assets/ebooks/my-first-coloring-book-cover.png',
       featured: false,
-      releaseDate: ''
+      releaseDate: '2026-11-10'
     }
   ]
 };
