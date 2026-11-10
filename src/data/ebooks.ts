@@ -412,7 +412,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
     },
 
     // ==========================================
-    // AMAZON KDP — PRIMEIRO LIVRO FÍSICO (PAPERBACK)
+    // AMAZON KDP — LIVROS FÍSICOS (PAPERBACK)
     // ==========================================
     {
       id: 'my-first-coloring-book-animals-adventures',
@@ -432,6 +432,25 @@ export const ebooksData: Record<Language, Ebook[]> = {
       coverImage: '/assets/ebooks/my-first-coloring-book-cover.png',
       featured: false,
       releaseDate: '2026-11-10'
+    },
+    {
+      id: 'meu-primeiro-livro-de-colorir-animais-e-aventuras',
+      slug: 'meu-primeiro-livro-de-colorir-animais-e-aventuras',
+      title: 'Meu Primeiro Livro de Colorir — Animais e Aventuras',
+      subtitle: 'Livro físico infantil para colorir com 80 ilustrações (Edição em Português • 4–8 anos)',
+      description: 'Livro físico infantil para colorir em português da CONEXUS E-BOOKS. Meu Primeiro Livro de Colorir — Animais e Aventuras reúne 80 desenhos grandes e divertidos de animais e aventuras em 164 páginas no formato 8.5 × 11", com uma ilustração por folha e verso em branco, indicado para crianças de 4 a 8 anos em edição física Paperback disponível através da Amazon.',
+      category: 'infantil',
+      categoryLabel: 'Infantil',
+      keywords: ['livro de colorir', 'animais', 'aventuras', 'paperback', 'infantil', '4-8 anos'],
+      pages: 164,
+      illustrations: 80,
+      dimensions: '8.5 × 11"',
+      ageRange: '4–8 anos',
+      format: 'Paperback',
+      language: 'pt',
+      coverImage: '/assets/ebooks/meu-primeiro-livro-de-colorir-cover.png',
+      featured: false,
+      releaseDate: '2026-11-08'
     }
   ],
 
@@ -845,7 +864,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
     },
 
     // ==========================================
-    // AMAZON KDP — FIRST PHYSICAL BOOK (PAPERBACK)
+    // AMAZON KDP — PHYSICAL BOOKS (PAPERBACK)
     // ==========================================
     {
       id: 'my-first-coloring-book-animals-adventures',
@@ -865,6 +884,25 @@ export const ebooksData: Record<Language, Ebook[]> = {
       coverImage: '/assets/ebooks/my-first-coloring-book-cover.png',
       featured: false,
       releaseDate: '2026-11-10'
+    },
+    {
+      id: 'meu-primeiro-livro-de-colorir-animais-e-aventuras',
+      slug: 'meu-primeiro-livro-de-colorir-animais-e-aventuras',
+      title: 'Meu Primeiro Livro de Colorir — Animais e Aventuras',
+      subtitle: 'Children’s printed coloring book with 80 illustrations (Portuguese Edition • Ages 4–8)',
+      description: 'Physical children’s coloring book published in Portuguese by CONEXUS E-BOOKS. Meu Primeiro Livro de Colorir — Animais e Aventuras features 80 animal and adventure illustrations on single-sided pages across 164 pages in a large 8.5 × 11" size, designed for children aged 4–8 in a printed Paperback edition available through Amazon.',
+      category: 'infantil',
+      categoryLabel: 'Children',
+      keywords: ['coloring book', 'portuguese edition', 'animals', 'adventures', 'paperback', 'ages 4-8'],
+      pages: 164,
+      illustrations: 80,
+      dimensions: '8.5 × 11"',
+      ageRange: '4–8 years',
+      format: 'Paperback',
+      language: 'pt',
+      coverImage: '/assets/ebooks/meu-primeiro-livro-de-colorir-cover.png',
+      featured: false,
+      releaseDate: '2026-11-08'
     }
   ],
 
@@ -1278,7 +1316,7 @@ export const ebooksData: Record<Language, Ebook[]> = {
     },
 
     // ==========================================
-    // AMAZON KDP — PRIMER LIBRO FÍSICO (PAPERBACK)
+    // AMAZON KDP — LIBROS FÍSICOS (PAPERBACK)
     // ==========================================
     {
       id: 'my-first-coloring-book-animals-adventures',
@@ -1298,6 +1336,25 @@ export const ebooksData: Record<Language, Ebook[]> = {
       coverImage: '/assets/ebooks/my-first-coloring-book-cover.png',
       featured: false,
       releaseDate: '2026-11-10'
+    },
+    {
+      id: 'meu-primeiro-livro-de-colorir-animais-e-aventuras',
+      slug: 'meu-primeiro-livro-de-colorir-animais-e-aventuras',
+      title: 'Meu Primeiro Livro de Colorir — Animais e Aventuras',
+      subtitle: 'Libro físico infantil para colorear con 80 ilustraciones (Edición en Portugués • 4–8 años)',
+      description: 'Libro físico infantil para colorear publicado en portugués por CONEXUS E-BOOKS. Meu Primeiro Livro de Colorir — Animais e Aventuras reúne 80 ilustraciones de animales y aventuras en hojas de una sola cara a lo largo de 164 páginas en formato grande de 8.5 × 11", indicado para niños de 4 a 8 años en edición impresa (Paperback) disponible a través de Amazon.',
+      category: 'infantil',
+      categoryLabel: 'Infantil',
+      keywords: ['libro para colorear', 'edición en portugués', 'animales', 'aventuras', 'paperback', '4-8 años'],
+      pages: 164,
+      illustrations: 80,
+      dimensions: '8.5 × 11"',
+      ageRange: '4–8 años',
+      format: 'Paperback',
+      language: 'pt',
+      coverImage: '/assets/ebooks/meu-primeiro-livro-de-colorir-cover.png',
+      featured: false,
+      releaseDate: '2026-11-08'
     }
   ]
 };

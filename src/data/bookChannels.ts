@@ -280,7 +280,7 @@ export const bookChannels: Record<string, BookChannelConfig> = {
   },
 
   // =========================================================
-  // PRIMEIRO TÍTULO FÍSICO AMAZON KDP (PAPERBACK)
+  // TÍTULOS FÍSICOS AMAZON KDP (PAPERBACK)
   // =========================================================
   'my-first-coloring-book-animals-adventures': {
     published: true,
@@ -294,6 +294,19 @@ export const bookChannels: Record<string, BookChannelConfig> = {
     kindleUkUrl: '',
     asin: 'B0HR58K85F',
     isbn: '9798141069703'
+  },
+  'meu-primeiro-livro-de-colorir-animais-e-aventuras': {
+    published: true,
+    language: 'pt',
+    availableFormats: ['paperback'],
+    hotmartEnabled: false,
+    hotmartCheckoutUrl: '',
+    amazonUrl: '',
+    amazonUkUrl: 'https://www.amazon.co.uk/dp/B0HR5VY2KK',
+    kindleUrl: '',
+    kindleUkUrl: '',
+    asin: 'B0HR5VY2KK',
+    isbn: '9798141015748'
   }
 };
 
